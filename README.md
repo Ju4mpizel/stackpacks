@@ -1,0 +1,16 @@
+# StackPacks
+
+Coleccionable de cartas para aprender desarrollo. Cada día abres sobres, cada carta es un tema corto
+y al estudiarla evoluciona. Completar series desbloquea tecnologías más avanzadas.
+
+## Desarrollo
+
+```bash
+pnpm install
+pnpm dev        # http://localhost:3000  (guía de estilos en /estilos)
+pnpm lint
+pnpm test
+pnpm build
+```
+
+La guía del proyecto está en [CLAUDE.md](CLAUDE.md).
