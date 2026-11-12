@@ -1,4 +1,5 @@
 import { Archivo_Black, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { ProgressRuntime } from "@/components/ProgressRuntime";
 import "./globals.css";
 
 const archivoBlack = Archivo_Black({
@@ -39,7 +40,10 @@ export default function RootLayout({ children }) {
       lang="es"
       className={`${archivoBlack.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="min-h-dvh">{children}</body>
+      <body className="min-h-dvh">
+        <ProgressRuntime />
+        {children}
+      </body>
     </html>
   );
 }

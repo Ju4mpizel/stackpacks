@@ -12,7 +12,8 @@
     "test:watch": "vitest",
     "validate:data": "node scripts/validate-data.mjs",
     "validate:urls": "node scripts/validate-data.mjs --urls",
-    "icons": "node scripts/generate-icons.mjs"
+    "icons": "node scripts/generate-icons.mjs",
+    "simulate": "node scripts/simulate-packs.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.71.0",

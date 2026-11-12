@@ -12,6 +12,8 @@ pnpm lint
 pnpm test
 pnpm build
 pnpm validate:data   # revisa /data (añade --urls con: pnpm validate:urls)
+pnpm icons           # regenera los iconos usados tras cambiar /data
+pnpm simulate        # simula el ritmo del sorteo con las cartas reales
 ```
 
 La guía del proyecto está en [CLAUDE.md](CLAUDE.md).
