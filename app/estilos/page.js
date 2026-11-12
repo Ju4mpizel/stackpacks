@@ -1,4 +1,6 @@
 import { Package, Sparkles, Lock, ArrowRight } from "lucide-react";
+import { Card } from "@/components/card";
+import { getCardEntry } from "@/lib/data";
 import {
   Arrow,
   Badge,
@@ -34,6 +36,13 @@ const SWATCH = {
   lilac: "bg-lilac",
 };
 
+const RARITY_SAMPLES = ["html-documento", "css-flexbox", "js-funciones", "sql-join", "js-fetch"];
+const STATE_SAMPLES = [
+  { id: "git-ramas", state: "silhouette", label: "Silueta · sin obtener" },
+  { id: "py-diccionarios", state: "obtained", label: "Apagada · obtenida" },
+  { id: "py-diccionarios", state: "evolved", label: "Evolucionada · holo" },
+];
+
 function Section({ title, children }) {
   return (
     <section className="space-y-5">
@@ -58,7 +67,7 @@ export default function EstilosPage() {
         {/* Hero */}
         <header className="relative">
           <Sticker color="teal" rotate={-6} className="absolute -top-4 right-2 sm:right-10">
-            Fase 1
+            Fase 3
           </Sticker>
           <Title as="h1" size="xl" rotate={-1.5}>
             Guía de <br />
@@ -71,6 +80,50 @@ export default function EstilosPage() {
             violetas.
           </p>
         </header>
+
+        {/* Cartas */}
+        <Section title="Cartas · rarezas">
+          <p className="max-w-xl">
+            Común ●, poco común ◆, rara ★, épica ★★ y legendaria ★★★ (borde doble). Todas evolucionadas:
+            pasa el ratón para inclinarlas y mover el brillo.
+          </p>
+          <div className="grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 lg:grid-cols-5">
+            {RARITY_SAMPLES.map((id) => {
+              const { card, series, number, total } = getCardEntry(id);
+              return <Card key={id} card={card} series={series} number={number} total={total} />;
+            })}
+          </div>
+        </Section>
+
+        <Section title="Cartas · estados">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 sm:gap-x-8">
+            {STATE_SAMPLES.map(({ id, state, label }) => {
+              const { card, series, number, total } = getCardEntry(id);
+              return (
+                <figure key={state} className="space-y-3">
+                  <Card card={card} series={series} number={number} total={total} state={state} />
+                  <figcaption>
+                    <Badge color={state === "evolved" ? "yellow" : "paper"}>{label}</Badge>
+                  </figcaption>
+                </figure>
+              );
+            })}
+          </div>
+        </Section>
+
+        <Section title="Cartas · tamaños">
+          <p className="max-w-xl">La carta escala con su contenedor (unidades cqw).</p>
+          <div className="flex flex-wrap items-end gap-4">
+            {[96, 140, 200, 280].map((w) => {
+              const { card, series, number, total } = getCardEntry("git-pull-requests");
+              return (
+                <div key={w} style={{ width: w }}>
+                  <Card card={card} series={series} number={number} total={total} tilt={w > 150} />
+                </div>
+              );
+            })}
+          </div>
+        </Section>
 
         {/* Colores */}
         <Section title="Paleta">

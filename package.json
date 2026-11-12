@@ -11,7 +11,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "validate:data": "node scripts/validate-data.mjs",
-    "validate:urls": "node scripts/validate-data.mjs --urls"
+    "validate:urls": "node scripts/validate-data.mjs --urls",
+    "icons": "node scripts/generate-icons.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.71.0",
@@ -19,6 +20,7 @@
     "next": "16.4.6",
     "react": "19.3.0",
     "react-dom": "19.3.0",
+    "server-only": "^0.0.1",
     "simple-icons": "^16.37.0",
     "zustand": "^5.1.0"
   },
