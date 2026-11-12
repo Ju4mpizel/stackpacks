@@ -16,9 +16,11 @@ import {
   applyToggleShowcase,
   createInitialState,
   migrateProgress,
+  PACKS_PER_DAY,
   pickPersisted,
   STATE_VERSION,
 } from "@/lib/state";
+import { localDateKey } from "@/lib/dates";
 
 export const useProgress = create(
   persist(
@@ -63,6 +65,10 @@ export const useProgress = create(
       setProfile: (patch) => set((s) => ({ profile: { ...s.profile, ...patch } })),
 
       resetProgress: () => set(createInitialState()),
+
+      /** Solo para pruebas: recarga los sobres del día sin esperar a medianoche. */
+      refillPacksForTesting: (now = new Date()) =>
+        set({ packs: { available: PACKS_PER_DAY, lastReset: localDateKey(now) } }),
     }),
     {
       name: "stackpacks-progress",

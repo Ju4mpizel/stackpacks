@@ -3,6 +3,7 @@
 import { ArrowDown, Clock, Package } from "lucide-react";
 import Link from "next/link";
 import { PackArt } from "@/components/pack/PackArt";
+import { TestRefillButton } from "@/components/TestRefillButton";
 import { Button, ProgressBar } from "@/components/ui";
 import { useHydrated } from "@/hooks/useHydrated";
 import { useNow } from "@/hooks/useNow";
@@ -92,10 +93,11 @@ export function HomeDashboard({ series, cardIdsBySeries }) {
               </Button>
             ) : (
               <Button size="lg" color="paper" disabled className="w-full sm:w-auto">
-                Sin sobres hasta mañana
+                Vuelve mañana
               </Button>
             )}
           </div>
+          <TestRefillButton className="mt-4" />
         </div>
       </section>
 

@@ -4,6 +4,7 @@ import { Clock, Gem, Library, Lock, Package, Scissors, Sparkles } from "lucide-r
 import { animate, AnimatePresence, motion, MotionConfig, useMotionValue, useReducedMotion, useTransform } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { RARITY } from "@/components/card/rarity";
+import { TestRefillButton } from "@/components/TestRefillButton";
 import { Arrow, Badge, Button, Sticker } from "@/components/ui";
 import { useHydrated } from "@/hooks/useHydrated";
 import { useNow } from "@/hooks/useNow";
@@ -39,6 +40,9 @@ function NoPacks() {
       <Button href="/" color="yellow">
         Volver al inicio
       </Button>
+      <div>
+        <TestRefillButton />
+      </div>
     </Notice>
   );
 }
@@ -353,9 +357,12 @@ export default function PackScene({ series, catalog, faces, meta, requirements, 
                       <Package size={18} aria-hidden="true" /> Abrir otro ({packs})
                     </Button>
                   ) : (
-                    <Button href="/" color="paper">
-                      Volver al inicio
-                    </Button>
+                    <>
+                      <Button href="/" color="paper">
+                        Volver al inicio
+                      </Button>
+                      <TestRefillButton />
+                    </>
                   )}
                 </motion.div>
               )}
