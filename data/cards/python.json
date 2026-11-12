@@ -1,0 +1,382 @@
+[
+  {
+    "id": "py-variables",
+    "seriesId": "python",
+    "title": "Variables y tipos",
+    "category": "Fundamentos",
+    "stage": 1,
+    "rarity": "common",
+    "summary": "En Python creas una variable al asignarle un valor, sin declarar su tipo. Los tipos básicos son int, float, str y bool.",
+    "keyPoints": [
+      "No hace falta declarar el tipo",
+      "type() te dice el tipo de un valor",
+      "Nombres en minúsculas_con_guiones"
+    ],
+    "example": "edad = 28          # int\nprecio = 9.99      # float\nnombre = \"Ana\"     # str\nactivo = True      # bool",
+    "docUrl": "https://docs.python.org/es/3/tutorial/introduction.html",
+    "docLabel": "Tutorial de Python — Una introducción informal",
+    "glyph": "box",
+    "quiz": [
+      {
+        "q": "¿De qué tipo es 9.99?",
+        "options": ["int", "float", "str"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "py-print-input",
+    "seriesId": "python",
+    "title": "print e input",
+    "category": "Fundamentos",
+    "stage": 1,
+    "rarity": "common",
+    "summary": "print() muestra texto en la consola e input() pide un dato al usuario. input() siempre devuelve un string.",
+    "keyPoints": [
+      "input() devuelve siempre str",
+      "Convierte con int() o float()",
+      "print() acepta varios valores separados por comas"
+    ],
+    "example": "nombre = input(\"¿Cómo te llamas? \")\nedad = int(input(\"¿Edad? \"))\nprint(\"Hola\", nombre, edad)",
+    "docUrl": "https://docs.python.org/es/3/tutorial/inputoutput.html",
+    "docLabel": "Tutorial de Python — Entrada y salida",
+    "glyph": "terminal",
+    "quiz": [
+      {
+        "q": "¿Qué tipo devuelve input()?",
+        "options": ["int", "str", "Depende de lo que escribas"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "py-strings",
+    "seriesId": "python",
+    "title": "Strings y f-strings",
+    "category": "Fundamentos",
+    "stage": 1,
+    "rarity": "common",
+    "summary": "Los strings son texto entre comillas. Las f-strings (f\"...\") insertan variables dentro del texto con llaves.",
+    "keyPoints": [
+      "f\"Hola {nombre}\" inserta la variable",
+      "Se recortan con índices: texto[0:3]",
+      ".upper(), .lower() y .strip() son muy usados"
+    ],
+    "example": "nombre = \"Ana\"\npuntos = 120\nprint(f\"{nombre} tiene {puntos} puntos\")\nprint(nombre.upper())  # ANA",
+    "docUrl": "https://docs.python.org/es/3/tutorial/inputoutput.html#formatted-string-literals",
+    "docLabel": "Tutorial de Python — Cadenas literales formateadas",
+    "glyph": "quote",
+    "quiz": [
+      {
+        "q": "¿Qué imprime print(f\"{2 + 3}\")?",
+        "options": ["2 + 3", "5", "{2 + 3}"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "py-condicionales",
+    "seriesId": "python",
+    "title": "Condicionales",
+    "category": "Fundamentos",
+    "stage": 1,
+    "rarity": "uncommon",
+    "summary": "if, elif y else ejecutan código según una condición. Python usa la indentación (4 espacios) para marcar cada bloque.",
+    "keyPoints": [
+      "Los bloques se marcan con indentación",
+      "elif encadena condiciones",
+      "and, or y not combinan condiciones"
+    ],
+    "example": "if nota >= 5 and asistencia:\n    print(\"Aprobado\")\nelse:\n    print(\"Suspenso\")",
+    "docUrl": "https://docs.python.org/es/3/tutorial/controlflow.html#if-statements",
+    "docLabel": "Tutorial de Python — La sentencia if",
+    "glyph": "git-fork",
+    "quiz": [
+      {
+        "q": "¿Cómo marca Python dónde empieza y acaba un bloque?",
+        "options": ["Con llaves {}", "Con la indentación", "Con end"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "py-bucles",
+    "seriesId": "python",
+    "title": "Bucles",
+    "category": "Lógica",
+    "stage": 2,
+    "rarity": "uncommon",
+    "summary": "for recorre los elementos de cualquier secuencia y while repite mientras se cumpla una condición. range() genera números.",
+    "keyPoints": [
+      "range(5) va de 0 a 4",
+      "enumerate() da índice y valor",
+      "break y continue controlan el bucle"
+    ],
+    "example": "for i in range(3):\n    print(i)          # 0, 1, 2\n\nfor i, fruta in enumerate([\"pera\", \"kiwi\"]):\n    print(i, fruta)",
+    "docUrl": "https://docs.python.org/es/3/tutorial/controlflow.html#for-statements",
+    "docLabel": "Tutorial de Python — La sentencia for",
+    "glyph": "repeat",
+    "quiz": [
+      {
+        "q": "¿Qué números genera range(3)?",
+        "options": ["1, 2, 3", "0, 1, 2", "0, 1, 2, 3"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "py-funciones",
+    "seriesId": "python",
+    "title": "Funciones",
+    "category": "Lógica",
+    "stage": 2,
+    "rarity": "rare",
+    "summary": "def define una función reutilizable. Recibe parámetros, puede tener valores por defecto y devuelve un resultado con return.",
+    "keyPoints": [
+      "Sin return devuelve None",
+      "Parámetros con valor por defecto",
+      "Puedes pasar argumentos por nombre"
+    ],
+    "example": "def saludar(nombre, signo=\"!\"):\n    return f\"Hola, {nombre}{signo}\"\n\nsaludar(\"Ana\")             # 'Hola, Ana!'\nsaludar(\"Leo\", signo=\"?\")",
+    "docUrl": "https://docs.python.org/es/3/tutorial/controlflow.html#defining-functions",
+    "docLabel": "Tutorial de Python — Definir funciones",
+    "glyph": "square-function",
+    "quiz": [
+      {
+        "q": "¿Qué devuelve una función sin return?",
+        "options": ["0", "None", "False"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "py-listas",
+    "seriesId": "python",
+    "title": "Listas",
+    "category": "Datos",
+    "stage": 2,
+    "rarity": "rare",
+    "summary": "Una lista guarda varios valores en orden y se puede modificar. Se escribe con corchetes y se accede por índice desde 0.",
+    "keyPoints": [
+      "append() añade al final",
+      "lista[-1] es el último elemento",
+      "len() da el número de elementos"
+    ],
+    "example": "cartas = [\"html\", \"css\"]\ncartas.append(\"js\")\nprint(cartas[-1])   # js\nprint(len(cartas))  # 3",
+    "docUrl": "https://docs.python.org/es/3/tutorial/datastructures.html#more-on-lists",
+    "docLabel": "Tutorial de Python — Más sobre listas",
+    "glyph": "list",
+    "quiz": [
+      {
+        "q": "¿Qué devuelve [10, 20, 30][-1]?",
+        "options": ["10", "30", "Un error"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "py-diccionarios",
+    "seriesId": "python",
+    "title": "Diccionarios",
+    "category": "Datos",
+    "stage": 2,
+    "rarity": "epic",
+    "summary": "Un diccionario guarda pares clave: valor para buscar datos por nombre. Es una de las estructuras más usadas en Python.",
+    "keyPoints": [
+      "Acceso por clave: d[\"nombre\"]",
+      ".get() evita error si la clave no existe",
+      ".items() recorre claves y valores"
+    ],
+    "example": "carta = {\"titulo\": \"Fetch\", \"rareza\": \"legendary\"}\nprint(carta[\"titulo\"])\nprint(carta.get(\"etapa\", 1))   # 1\nfor clave, valor in carta.items():\n    print(clave, valor)",
+    "docUrl": "https://docs.python.org/es/3/tutorial/datastructures.html#dictionaries",
+    "docLabel": "Tutorial de Python — Diccionarios",
+    "glyph": "book-a",
+    "quiz": [
+      {
+        "q": "¿Qué método devuelve un valor por defecto si falta la clave?",
+        "options": [".get()", ".find()", ".keys()"],
+        "answer": 0
+      },
+      {
+        "q": "¿Qué recorre .items()?",
+        "options": ["Solo las claves", "Pares clave y valor", "Solo los valores"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "py-tuplas-sets",
+    "seriesId": "python",
+    "title": "Tuplas y sets",
+    "category": "Datos",
+    "stage": 3,
+    "rarity": "uncommon",
+    "summary": "Una tupla es como una lista que no se puede modificar. Un set es una colección sin orden y sin elementos repetidos.",
+    "keyPoints": [
+      "Tuplas con paréntesis: (1, 2)",
+      "Sets con llaves: {1, 2}",
+      "set() elimina repetidos de una lista"
+    ],
+    "example": "punto = (3, 4)\nx, y = punto\nunicos = set([1, 1, 2, 3])   # {1, 2, 3}",
+    "docUrl": "https://docs.python.org/es/3/tutorial/datastructures.html#tuples-and-sequences",
+    "docLabel": "Tutorial de Python — Tuplas y secuencias",
+    "glyph": "shapes",
+    "quiz": [
+      {
+        "q": "¿Qué estructura elimina los elementos repetidos?",
+        "options": ["tuple", "set", "list"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "py-modulos",
+    "seriesId": "python",
+    "title": "Módulos e imports",
+    "category": "Proyecto",
+    "stage": 3,
+    "rarity": "uncommon",
+    "summary": "Un módulo es un archivo .py con código reutilizable. Con import usas módulos propios o de la biblioteca estándar.",
+    "keyPoints": [
+      "import math usa math.sqrt()",
+      "from math import sqrt importa solo una parte",
+      "if __name__ == \"__main__\": ejecuta solo al lanzar el archivo"
+    ],
+    "example": "import random\nfrom math import sqrt\n\nprint(random.choice([\"a\", \"b\"]))\nprint(sqrt(16))   # 4.0",
+    "docUrl": "https://docs.python.org/es/3/tutorial/modules.html",
+    "docLabel": "Tutorial de Python — Módulos",
+    "glyph": "package",
+    "quiz": [
+      {
+        "q": "¿Cómo importas solo la función sqrt de math?",
+        "options": ["import sqrt", "from math import sqrt", "include math.sqrt"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "py-comprensiones",
+    "seriesId": "python",
+    "title": "Comprensiones de listas",
+    "category": "Datos",
+    "stage": 3,
+    "rarity": "rare",
+    "summary": "Una comprensión crea una lista nueva a partir de otra en una sola línea, transformando y filtrando sus elementos.",
+    "keyPoints": [
+      "[expresión for x in lista]",
+      "Añade if al final para filtrar",
+      "También existen para dicts y sets"
+    ],
+    "example": "nums = [1, 2, 3, 4]\ncuadrados = [n * n for n in nums]        # [1, 4, 9, 16]\npares = [n for n in nums if n % 2 == 0]  # [2, 4]",
+    "docUrl": "https://docs.python.org/es/3/tutorial/datastructures.html#list-comprehensions",
+    "docLabel": "Tutorial de Python — Comprensión de listas",
+    "glyph": "wand-sparkles",
+    "quiz": [
+      {
+        "q": "¿Qué devuelve [n * 2 for n in [1, 2]]?",
+        "options": ["[1, 2, 1, 2]", "[2, 4]", "[3]"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "py-errores",
+    "seriesId": "python",
+    "title": "Manejo de errores",
+    "category": "Proyecto",
+    "stage": 3,
+    "rarity": "rare",
+    "summary": "try / except captura errores (excepciones) para que el programa no se detenga y puedas reaccionar ante ellos.",
+    "keyPoints": [
+      "Captura excepciones concretas, no todas",
+      "else se ejecuta si no hubo error",
+      "raise lanza una excepción propia"
+    ],
+    "example": "try:\n    edad = int(\"veinte\")\nexcept ValueError:\n    print(\"Eso no es un número\")",
+    "docUrl": "https://docs.python.org/es/3/tutorial/errors.html",
+    "docLabel": "Tutorial de Python — Errores y excepciones",
+    "glyph": "shield-exclamation-point",
+    "quiz": [
+      {
+        "q": "¿Qué excepción lanza int(\"hola\")?",
+        "options": ["TypeError", "ValueError", "KeyError"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "py-archivos",
+    "seriesId": "python",
+    "title": "Leer y escribir archivos",
+    "category": "Proyecto",
+    "stage": 4,
+    "rarity": "uncommon",
+    "summary": "open() abre un archivo para leer (\"r\") o escribir (\"w\"). Con with se cierra solo al terminar.",
+    "keyPoints": [
+      "Usa siempre with open(...)",
+      "\"w\" sobrescribe, \"a\" añade al final",
+      "Indica encoding=\"utf-8\""
+    ],
+    "example": "with open(\"notas.txt\", \"w\", encoding=\"utf-8\") as f:\n    f.write(\"Hola\\n\")\n\nwith open(\"notas.txt\", encoding=\"utf-8\") as f:\n    print(f.read())",
+    "docUrl": "https://docs.python.org/es/3/tutorial/inputoutput.html#reading-and-writing-files",
+    "docLabel": "Tutorial de Python — Leer y escribir archivos",
+    "glyph": "file-text",
+    "quiz": [
+      {
+        "q": "¿Qué modo añade texto al final sin borrar lo anterior?",
+        "options": ["\"w\"", "\"a\"", "\"r\""],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "py-clases",
+    "seriesId": "python",
+    "title": "Clases",
+    "category": "Proyecto",
+    "stage": 4,
+    "rarity": "epic",
+    "summary": "Una clase es una plantilla para crear objetos con datos (atributos) y comportamiento (métodos). __init__ se ejecuta al crear cada objeto.",
+    "keyPoints": [
+      "__init__ inicializa el objeto",
+      "self es el propio objeto",
+      "Los nombres de clase van en CamelCase"
+    ],
+    "example": "class Carta:\n    def __init__(self, titulo):\n        self.titulo = titulo\n\nc = Carta(\"Fetch\")",
+    "docUrl": "https://docs.python.org/es/3/tutorial/classes.html",
+    "docLabel": "Tutorial de Python — Clases",
+    "glyph": "blocks",
+    "quiz": [
+      {
+        "q": "¿Qué método se ejecuta al crear un objeto?",
+        "options": ["__start__", "__init__", "__new_object__"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "py-pip-venv",
+    "seriesId": "python",
+    "title": "pip y entornos virtuales",
+    "category": "Proyecto",
+    "stage": 4,
+    "rarity": "legendary",
+    "summary": "Un entorno virtual aísla las librerías de cada proyecto y pip las instala. Es lo primero que se configura en cualquier proyecto real.",
+    "keyPoints": [
+      "python -m venv .venv crea el entorno",
+      "Actívalo antes de instalar nada",
+      "requirements.txt lista las dependencias"
+    ],
+    "example": "python -m venv .venv\nsource .venv/bin/activate   # Windows: .venv\\Scripts\\activate\npip install requests\npip freeze > requirements.txt",
+    "docUrl": "https://docs.python.org/es/3/tutorial/venv.html",
+    "docLabel": "Tutorial de Python — Entornos virtuales y paquetes",
+    "glyph": "package-check",
+    "quiz": [
+      {
+        "q": "¿Para qué sirve un entorno virtual?",
+        "options": ["Para ejecutar Python más rápido", "Para aislar las librerías de cada proyecto", "Para compilar el código"],
+        "answer": 1
+      }
+    ]
+  }
+]

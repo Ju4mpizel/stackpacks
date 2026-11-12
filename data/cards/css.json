@@ -1,0 +1,362 @@
+[
+  {
+    "id": "css-selectores",
+    "seriesId": "css",
+    "title": "Selectores",
+    "category": "Fundamentos",
+    "stage": 1,
+    "rarity": "common",
+    "summary": "Un selector indica a qué elementos se aplica una regla CSS: por etiqueta, por clase (.) o por id (#).",
+    "keyPoints": [
+      ".clase selecciona todos los que la tengan",
+      "#id selecciona un único elemento",
+      "Separa con comas para varios selectores"
+    ],
+    "example": "p { color: #111; }\n.boton { padding: 8px; }\n#logo { width: 120px; }\nh1, h2 { font-weight: 800; }",
+    "docUrl": "https://developer.mozilla.org/es/docs/Learn_web_development/Core/Styling_basics/Basic_selectors",
+    "docLabel": "MDN — Selectores básicos",
+    "glyph": "mouse-pointer-2",
+    "quiz": [
+      {
+        "q": "¿Qué selector apunta a la clase \"card\"?",
+        "options": ["#card", ".card", "card"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "css-colores-unidades",
+    "seriesId": "css",
+    "title": "Colores y unidades",
+    "category": "Fundamentos",
+    "stage": 1,
+    "rarity": "common",
+    "summary": "Los colores se escriben en hexadecimal, rgb() u hsl(). Las medidas pueden ser absolutas (px) o relativas (rem, %, vw).",
+    "keyPoints": [
+      "rem es relativo al tamaño de letra raíz",
+      "% es relativo al elemento padre",
+      "Prefiere rem para textos accesibles"
+    ],
+    "example": "body {\n  color: #111111;\n  background: rgb(255 246 229);\n  font-size: 1rem;\n}",
+    "docUrl": "https://developer.mozilla.org/es/docs/Learn_web_development/Core/Styling_basics/Values_and_units",
+    "docLabel": "MDN — Valores y unidades",
+    "glyph": "palette",
+    "quiz": [
+      {
+        "q": "¿A qué es relativo rem?",
+        "options": ["Al elemento padre", "Al tamaño de letra raíz", "Al ancho de la pantalla"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "css-tipografia",
+    "seriesId": "css",
+    "title": "Tipografía",
+    "category": "Fundamentos",
+    "stage": 1,
+    "rarity": "common",
+    "summary": "Con font-family, font-size, font-weight y line-height controlas la fuente, el tamaño, el grosor y el interlineado del texto.",
+    "keyPoints": [
+      "Da siempre fuentes de respaldo",
+      "line-height sin unidad escala con el texto",
+      "font-weight va de 100 a 900"
+    ],
+    "example": "p {\n  font-family: \"DM Sans\", sans-serif;\n  font-size: 1.125rem;\n  line-height: 1.6;\n}",
+    "docUrl": "https://developer.mozilla.org/es/docs/Learn_web_development/Core/Text_styling/Fundamentals",
+    "docLabel": "MDN — Fundamentos de texto y fuentes",
+    "glyph": "type",
+    "quiz": [
+      {
+        "q": "¿Qué propiedad controla el interlineado?",
+        "options": ["letter-spacing", "line-height", "font-size"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "css-fondos-bordes",
+    "seriesId": "css",
+    "title": "Fondos y bordes",
+    "category": "Fundamentos",
+    "stage": 1,
+    "rarity": "common",
+    "summary": "background pinta el fondo con colores, imágenes o degradados, y border dibuja el contorno con grosor, estilo y color.",
+    "keyPoints": [
+      "border: grosor estilo color",
+      "border-radius redondea las esquinas",
+      "background-size: cover rellena sin deformar"
+    ],
+    "example": ".tarjeta {\n  background: #FFD23F;\n  border: 3px solid #111;\n  border-radius: 8px;\n}",
+    "docUrl": "https://developer.mozilla.org/es/docs/Learn_web_development/Core/Styling_basics/Backgrounds_and_borders",
+    "docLabel": "MDN — Fondos y bordes",
+    "glyph": "square-dashed",
+    "quiz": [
+      {
+        "q": "¿Qué propiedad redondea las esquinas?",
+        "options": ["border-style", "border-radius", "outline"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "css-cascada",
+    "seriesId": "css",
+    "title": "Cascada y especificidad",
+    "category": "Fundamentos",
+    "stage": 1,
+    "rarity": "rare",
+    "summary": "Cuando dos reglas chocan, gana la más específica (id > clase > etiqueta). Si empatan, gana la que aparece después.",
+    "keyPoints": [
+      "Un id pesa más que muchas clases",
+      "A igual peso, gana la última regla",
+      "Evita !important: rompe la cascada"
+    ],
+    "example": "p { color: black; }\n.nota { color: blue; }\n/* <p class=\"nota\"> será azul */",
+    "docUrl": "https://developer.mozilla.org/es/docs/Learn_web_development/Core/Styling_basics/Handling_conflicts",
+    "docLabel": "MDN — Gestionar los conflictos",
+    "glyph": "layers",
+    "quiz": [
+      {
+        "q": "Si dos reglas tienen la misma especificidad, ¿cuál gana?",
+        "options": ["La primera", "La última", "Ninguna"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "css-display",
+    "seriesId": "css",
+    "title": "display",
+    "category": "Caja",
+    "stage": 2,
+    "rarity": "uncommon",
+    "summary": "display decide cómo se comporta un elemento: block ocupa toda la fila, inline fluye con el texto y none lo oculta.",
+    "keyPoints": [
+      "block respeta ancho y alto",
+      "inline ignora width y height",
+      "inline-block mezcla ambos"
+    ],
+    "example": "a.boton { display: inline-block; }\n.oculto { display: none; }",
+    "docUrl": "https://developer.mozilla.org/es/docs/Web/CSS/Reference/Properties/display",
+    "docLabel": "MDN — display",
+    "glyph": "rectangle-horizontal",
+    "quiz": [
+      {
+        "q": "¿Qué valor de display oculta el elemento?",
+        "options": ["hidden", "none", "invisible"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "css-position",
+    "seriesId": "css",
+    "title": "position",
+    "category": "Caja",
+    "stage": 2,
+    "rarity": "rare",
+    "summary": "position saca o fija un elemento respecto al flujo normal. Con top, right, bottom y left lo mueves.",
+    "keyPoints": [
+      "relative lo mueve respecto a su sitio",
+      "absolute se ubica respecto al padre posicionado",
+      "sticky se queda pegado al hacer scroll"
+    ],
+    "example": ".padre { position: relative; }\n.sello {\n  position: absolute;\n  top: 8px; right: 8px;\n}",
+    "docUrl": "https://developer.mozilla.org/es/docs/Web/CSS/Reference/Properties/position",
+    "docLabel": "MDN — position",
+    "glyph": "move",
+    "quiz": [
+      {
+        "q": "¿Respecto a qué se ubica un elemento absolute?",
+        "options": ["A la ventana siempre", "A su ancestro posicionado más cercano", "A su hermano anterior"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "css-modelo-caja",
+    "seriesId": "css",
+    "title": "Modelo de caja",
+    "category": "Caja",
+    "stage": 2,
+    "rarity": "epic",
+    "summary": "Todo elemento es una caja con contenido, padding (relleno), border (borde) y margin (espacio exterior).",
+    "keyPoints": [
+      "padding está dentro del borde, margin fuera",
+      "box-sizing: border-box incluye padding y borde en el ancho",
+      "Los márgenes verticales pueden colapsar"
+    ],
+    "example": "* { box-sizing: border-box; }\n.caja {\n  width: 200px;\n  padding: 16px; margin: 24px;\n}",
+    "docUrl": "https://developer.mozilla.org/es/docs/Learn_web_development/Core/Styling_basics/Box_model",
+    "docLabel": "MDN — El modelo de caja",
+    "glyph": "frame",
+    "quiz": [
+      {
+        "q": "¿Qué propiedad añade espacio fuera del borde?",
+        "options": ["padding", "margin", "gap"],
+        "answer": 1
+      },
+      {
+        "q": "¿Qué hace box-sizing: border-box?",
+        "options": ["Quita el borde", "Incluye padding y borde en el ancho", "Centra la caja"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "css-flexbox",
+    "seriesId": "css",
+    "title": "Flexbox",
+    "category": "Layout",
+    "stage": 3,
+    "rarity": "uncommon",
+    "summary": "display: flex coloca a los hijos en una fila o columna y facilita alinearlos y repartir el espacio.",
+    "keyPoints": [
+      "justify-content alinea en el eje principal",
+      "align-items alinea en el eje cruzado",
+      "gap separa los elementos"
+    ],
+    "example": ".barra {\n  display: flex; gap: 12px;\n  justify-content: space-between;\n  align-items: center;\n}",
+    "docUrl": "https://developer.mozilla.org/es/docs/Learn_web_development/Core/CSS_layout/Flexbox",
+    "docLabel": "MDN — Flexbox",
+    "glyph": "columns-3",
+    "quiz": [
+      {
+        "q": "¿Qué propiedad separa los elementos flex?",
+        "options": ["margin-all", "gap", "space"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "css-responsive",
+    "seriesId": "css",
+    "title": "Media queries",
+    "category": "Layout",
+    "stage": 3,
+    "rarity": "epic",
+    "summary": "Las media queries aplican estilos solo cuando se cumple una condición, como un ancho mínimo de pantalla. Son la base del diseño responsive.",
+    "keyPoints": [
+      "Mobile first: estilos base para móvil",
+      "min-width añade cambios en pantallas grandes",
+      "También detectan preferencias del usuario"
+    ],
+    "example": ".grilla { grid-template-columns: 1fr; }\n@media (min-width: 768px) {\n  .grilla { grid-template-columns: 1fr 1fr; }\n}",
+    "docUrl": "https://developer.mozilla.org/es/docs/Learn_web_development/Core/CSS_layout/Media_queries",
+    "docLabel": "MDN — Media queries",
+    "glyph": "smartphone",
+    "quiz": [
+      {
+        "q": "En mobile first, ¿qué condición se usa para pantallas grandes?",
+        "options": ["max-width", "min-width", "orientation"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "css-grid",
+    "seriesId": "css",
+    "title": "Grid",
+    "category": "Layout",
+    "stage": 3,
+    "rarity": "legendary",
+    "summary": "display: grid organiza el contenido en filas y columnas a la vez. Es la herramienta más potente para maquetar páginas.",
+    "keyPoints": [
+      "grid-template-columns define las columnas",
+      "fr reparte el espacio libre",
+      "repeat(auto-fill, minmax()) crea grillas responsive"
+    ],
+    "example": ".binder {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));\n  gap: 16px;\n}",
+    "docUrl": "https://developer.mozilla.org/es/docs/Learn_web_development/Core/CSS_layout/Grids",
+    "docLabel": "MDN — Grids",
+    "glyph": "layout-grid",
+    "quiz": [
+      {
+        "q": "¿Qué unidad reparte el espacio libre en Grid?",
+        "options": ["px", "fr", "em"],
+        "answer": 1
+      },
+      {
+        "q": "¿Qué propiedad define las columnas?",
+        "options": ["grid-template-columns", "grid-columns", "columns-count"],
+        "answer": 0
+      }
+    ]
+  },
+  {
+    "id": "css-pseudoclases",
+    "seriesId": "css",
+    "title": "Pseudoclases",
+    "category": "Interacción",
+    "stage": 4,
+    "rarity": "uncommon",
+    "summary": "Las pseudoclases seleccionan elementos según su estado, como :hover al pasar el ratón o :focus-visible al navegar con teclado.",
+    "keyPoints": [
+      ":hover para el ratón encima",
+      ":focus-visible para el foco de teclado",
+      ":nth-child() elige por posición"
+    ],
+    "example": ".boton:hover { background: #FF6B9E; }\n.boton:focus-visible { outline: 4px solid #4D7CFE; }\nli:nth-child(odd) { background: #eee; }",
+    "docUrl": "https://developer.mozilla.org/es/docs/Web/CSS/Reference/Selectors/Pseudo-classes",
+    "docLabel": "MDN — Pseudoclases",
+    "glyph": "pointer",
+    "quiz": [
+      {
+        "q": "¿Qué pseudoclase muestra el foco al navegar con teclado?",
+        "options": [":active", ":focus-visible", ":visited"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "css-transiciones",
+    "seriesId": "css",
+    "title": "Transiciones",
+    "category": "Interacción",
+    "stage": 4,
+    "rarity": "uncommon",
+    "summary": "transition anima el cambio de una propiedad entre dos estados, por ejemplo al pasar el ratón por encima.",
+    "keyPoints": [
+      "Indica propiedad, duración y curva",
+      "Anima transform y opacity para más fluidez",
+      "Respeta prefers-reduced-motion"
+    ],
+    "example": ".boton {\n  transition: transform 150ms ease;\n}\n.boton:hover { transform: translateY(-2px); }",
+    "docUrl": "https://developer.mozilla.org/es/docs/Web/CSS/Guides/Transitions/Using",
+    "docLabel": "MDN — Usar transiciones CSS",
+    "glyph": "wand-sparkles",
+    "quiz": [
+      {
+        "q": "¿Qué propiedades conviene animar para que sea fluido?",
+        "options": ["width y height", "transform y opacity", "margin y padding"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "css-variables",
+    "seriesId": "css",
+    "title": "Variables CSS",
+    "category": "Interacción",
+    "stage": 4,
+    "rarity": "rare",
+    "summary": "Las propiedades personalizadas (--nombre) guardan valores que reutilizas con var(). Cambiar una variable actualiza todo lo que la usa.",
+    "keyPoints": [
+      "Se declaran con dos guiones: --color",
+      "Se leen con var(--color)",
+      "Se heredan y se pueden cambiar por zona"
+    ],
+    "example": ":root { --acento: #FF6B9E; }\n.boton {\n  background: var(--acento);\n}",
+    "docUrl": "https://developer.mozilla.org/es/docs/Web/CSS/Guides/Cascading_variables/Using_custom_properties",
+    "docLabel": "MDN — Usar variables CSS",
+    "glyph": "variable",
+    "quiz": [
+      {
+        "q": "¿Cómo se lee una variable CSS?",
+        "options": ["$acento", "var(--acento)", "@acento"],
+        "answer": 1
+      }
+    ]
+  }
+]

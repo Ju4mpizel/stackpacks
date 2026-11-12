@@ -11,6 +11,7 @@ pnpm dev        # http://localhost:3000  (guía de estilos en /estilos)
 pnpm lint
 pnpm test
 pnpm build
+pnpm validate:data   # revisa /data (añade --urls con: pnpm validate:urls)
 ```
 
 La guía del proyecto está en [CLAUDE.md](CLAUDE.md).

@@ -1,0 +1,387 @@
+[
+  {
+    "id": "sql-tablas",
+    "seriesId": "sql",
+    "title": "Tablas, filas y columnas",
+    "category": "Fundamentos",
+    "stage": 1,
+    "rarity": "common",
+    "summary": "Una base de datos relacional guarda los datos en tablas. Cada columna es un campo con un tipo y cada fila es un registro.",
+    "keyPoints": [
+      "Una tabla por tipo de cosa: usuarios, pedidos...",
+      "Todas las filas tienen las mismas columnas",
+      "SQL es el lenguaje para consultarlas"
+    ],
+    "example": "-- tabla usuarios\n-- id | nombre | email\n--  1 | Ana    | ana@ejemplo.com\n--  2 | Leo    | leo@ejemplo.com",
+    "docUrl": "https://www.postgresql.org/docs/current/tutorial-concepts.html",
+    "docLabel": "PostgreSQL — Conceptos (en inglés)",
+    "glyph": "table-2",
+    "quiz": [
+      {
+        "q": "En una tabla, ¿qué representa cada fila?",
+        "options": ["Un campo", "Un registro", "Un tipo de dato"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "sql-tipos",
+    "seriesId": "sql",
+    "title": "Tipos de datos",
+    "category": "Fundamentos",
+    "stage": 1,
+    "rarity": "common",
+    "summary": "Cada columna tiene un tipo que limita qué puede guardar: números enteros, texto, fechas, booleanos o decimales.",
+    "keyPoints": [
+      "INTEGER para enteros, NUMERIC para dinero",
+      "VARCHAR(n) o TEXT para texto",
+      "DATE y TIMESTAMP para fechas"
+    ],
+    "example": "edad      INTEGER\nnombre    VARCHAR(80)\nprecio    NUMERIC(10, 2)\ncreado_en TIMESTAMP",
+    "docUrl": "https://www.postgresql.org/docs/current/datatype.html",
+    "docLabel": "PostgreSQL — Tipos de datos (en inglés)",
+    "glyph": "shapes",
+    "quiz": [
+      {
+        "q": "¿Qué tipo es mejor para guardar precios?",
+        "options": ["INTEGER", "NUMERIC(10, 2)", "TEXT"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "sql-insert",
+    "seriesId": "sql",
+    "title": "INSERT",
+    "category": "Fundamentos",
+    "stage": 1,
+    "rarity": "common",
+    "summary": "INSERT INTO añade filas nuevas a una tabla. Indica las columnas y después los valores en el mismo orden.",
+    "keyPoints": [
+      "Escribe siempre la lista de columnas",
+      "El texto va entre comillas simples",
+      "Puedes insertar varias filas a la vez"
+    ],
+    "example": "INSERT INTO usuarios (nombre, email)\nVALUES ('Ana', 'ana@ejemplo.com'),\n       ('Leo', 'leo@ejemplo.com');",
+    "docUrl": "https://www.postgresql.org/docs/current/tutorial-populate.html",
+    "docLabel": "PostgreSQL — Rellenar una tabla con filas (en inglés)",
+    "glyph": "list-plus",
+    "quiz": [
+      {
+        "q": "¿Con qué comillas se escribe el texto en SQL?",
+        "options": ["Comillas simples ' '", "Comillas dobles \" \"", "Acentos graves ` `"],
+        "answer": 0
+      }
+    ]
+  },
+  {
+    "id": "sql-create-table",
+    "seriesId": "sql",
+    "title": "CREATE TABLE",
+    "category": "Fundamentos",
+    "stage": 1,
+    "rarity": "uncommon",
+    "summary": "CREATE TABLE define una tabla nueva: su nombre, sus columnas, el tipo de cada una y sus restricciones.",
+    "keyPoints": [
+      "NOT NULL obliga a tener valor",
+      "UNIQUE impide valores repetidos",
+      "DEFAULT da un valor si no se indica"
+    ],
+    "example": "CREATE TABLE usuarios (\n  id     SERIAL PRIMARY KEY,\n  nombre VARCHAR(80) NOT NULL,\n  email  TEXT UNIQUE\n);",
+    "docUrl": "https://www.postgresql.org/docs/current/tutorial-table.html",
+    "docLabel": "PostgreSQL — Crear una tabla (en inglés)",
+    "glyph": "table-properties",
+    "quiz": [
+      {
+        "q": "¿Qué restricción impide valores repetidos?",
+        "options": ["NOT NULL", "UNIQUE", "DEFAULT"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "sql-select",
+    "seriesId": "sql",
+    "title": "SELECT",
+    "category": "Consultas",
+    "stage": 2,
+    "rarity": "rare",
+    "summary": "SELECT lee datos de una tabla. Eliges qué columnas quieres ver y de qué tabla con FROM.",
+    "keyPoints": [
+      "SELECT * trae todas las columnas",
+      "Mejor pedir solo las columnas necesarias",
+      "AS renombra una columna en el resultado"
+    ],
+    "example": "SELECT nombre, email\nFROM usuarios;\n\nSELECT nombre AS usuario FROM usuarios;",
+    "docUrl": "https://www.postgresql.org/docs/current/tutorial-select.html",
+    "docLabel": "PostgreSQL — Consultar una tabla (en inglés)",
+    "glyph": "search",
+    "quiz": [
+      {
+        "q": "¿Qué cláusula indica la tabla de la que se lee?",
+        "options": ["WHERE", "FROM", "INTO"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "sql-where",
+    "seriesId": "sql",
+    "title": "WHERE",
+    "category": "Consultas",
+    "stage": 2,
+    "rarity": "uncommon",
+    "summary": "WHERE filtra las filas: solo devuelve las que cumplen la condición. Se combina con AND, OR, LIKE e IN.",
+    "keyPoints": [
+      "Comparar: = <> < > <= >=",
+      "LIKE 'A%' busca textos que empiezan por A",
+      "IS NULL para valores vacíos (no = NULL)"
+    ],
+    "example": "SELECT nombre FROM usuarios\nWHERE edad >= 18\n  AND nombre LIKE 'A%';",
+    "docUrl": "https://www.postgresql.org/docs/current/queries-table-expressions.html#QUERIES-WHERE",
+    "docLabel": "PostgreSQL — La cláusula WHERE (en inglés)",
+    "glyph": "funnel",
+    "quiz": [
+      {
+        "q": "¿Cómo compruebas si una columna está vacía?",
+        "options": ["= NULL", "IS NULL", "== NULL"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "sql-order-limit",
+    "seriesId": "sql",
+    "title": "ORDER BY y LIMIT",
+    "category": "Consultas",
+    "stage": 2,
+    "rarity": "uncommon",
+    "summary": "ORDER BY ordena el resultado por una o más columnas y LIMIT se queda con las primeras filas.",
+    "keyPoints": [
+      "ASC ascendente (por defecto), DESC descendente",
+      "Sin ORDER BY el orden no está garantizado",
+      "OFFSET salta filas para paginar"
+    ],
+    "example": "SELECT nombre, puntos FROM usuarios\nORDER BY puntos DESC\nLIMIT 10;",
+    "docUrl": "https://www.postgresql.org/docs/current/queries-order.html",
+    "docLabel": "PostgreSQL — Ordenar filas (en inglés)",
+    "glyph": "arrow-down-wide-narrow",
+    "quiz": [
+      {
+        "q": "¿Cómo ordenas de mayor a menor?",
+        "options": ["ORDER BY puntos ASC", "ORDER BY puntos DESC", "SORT puntos"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "sql-update",
+    "seriesId": "sql",
+    "title": "UPDATE",
+    "category": "Modificar",
+    "stage": 3,
+    "rarity": "uncommon",
+    "summary": "UPDATE cambia valores de filas existentes. SET indica el nuevo valor y WHERE qué filas se modifican.",
+    "keyPoints": [
+      "Sin WHERE cambia TODAS las filas",
+      "Puedes cambiar varias columnas a la vez",
+      "Prueba antes el WHERE con un SELECT"
+    ],
+    "example": "UPDATE usuarios\nSET puntos = puntos + 10\nWHERE id = 1;",
+    "docUrl": "https://www.postgresql.org/docs/current/tutorial-update.html",
+    "docLabel": "PostgreSQL — Actualizaciones (en inglés)",
+    "glyph": "pencil",
+    "quiz": [
+      {
+        "q": "¿Qué pasa si haces UPDATE sin WHERE?",
+        "options": ["Da un error", "Se modifican todas las filas", "No pasa nada"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "sql-delete",
+    "seriesId": "sql",
+    "title": "DELETE",
+    "category": "Modificar",
+    "stage": 3,
+    "rarity": "uncommon",
+    "summary": "DELETE FROM borra filas de una tabla. Como UPDATE, sin WHERE afecta a todas las filas.",
+    "keyPoints": [
+      "Sin WHERE vacía la tabla entera",
+      "Borra filas, no la tabla (eso es DROP)",
+      "Úsalo dentro de una transacción si dudas"
+    ],
+    "example": "DELETE FROM usuarios\nWHERE ultimo_acceso < '2020-01-01';",
+    "docUrl": "https://www.postgresql.org/docs/current/tutorial-delete.html",
+    "docLabel": "PostgreSQL — Borrados (en inglés)",
+    "glyph": "trash",
+    "quiz": [
+      {
+        "q": "¿Qué comando borra la tabla completa, no solo sus filas?",
+        "options": ["DELETE", "DROP TABLE", "REMOVE"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "sql-primary-key",
+    "seriesId": "sql",
+    "title": "Clave primaria",
+    "category": "Relaciones",
+    "stage": 3,
+    "rarity": "rare",
+    "summary": "La clave primaria identifica cada fila de forma única. No puede repetirse ni estar vacía.",
+    "keyPoints": [
+      "Una por tabla",
+      "Suele ser un id numérico autoincremental",
+      "Las demás tablas la usan para relacionarse"
+    ],
+    "example": "CREATE TABLE cartas (\n  id     SERIAL PRIMARY KEY,\n  titulo TEXT NOT NULL\n);",
+    "docUrl": "https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-PRIMARY-KEYS",
+    "docLabel": "PostgreSQL — Claves primarias (en inglés)",
+    "glyph": "key-round",
+    "quiz": [
+      {
+        "q": "¿Puede una clave primaria estar vacía (NULL)?",
+        "options": ["Sí", "No", "Solo si es texto"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "sql-foreign-key",
+    "seriesId": "sql",
+    "title": "Clave foránea",
+    "category": "Relaciones",
+    "stage": 3,
+    "rarity": "rare",
+    "summary": "Una clave foránea es una columna que apunta a la clave primaria de otra tabla, y la base de datos garantiza que esa fila exista.",
+    "keyPoints": [
+      "Conecta tablas: pedido → usuario",
+      "Impide referencias a filas inexistentes",
+      "ON DELETE decide qué pasa al borrar"
+    ],
+    "example": "CREATE TABLE pedidos (\n  id         SERIAL PRIMARY KEY,\n  usuario_id INTEGER REFERENCES usuarios(id)\n);",
+    "docUrl": "https://www.postgresql.org/docs/current/tutorial-fk.html",
+    "docLabel": "PostgreSQL — Claves foráneas (en inglés)",
+    "glyph": "link-2",
+    "quiz": [
+      {
+        "q": "¿A qué apunta una clave foránea?",
+        "options": ["A otra base de datos", "A la clave primaria de otra tabla", "A un índice"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "sql-indices",
+    "seriesId": "sql",
+    "title": "Índices",
+    "category": "Rendimiento",
+    "stage": 4,
+    "rarity": "rare",
+    "summary": "Un índice es una estructura que acelera las búsquedas por una columna, como el índice de un libro. A cambio, ocupa espacio y ralentiza un poco las escrituras.",
+    "keyPoints": [
+      "Úsalos en columnas que filtras a menudo",
+      "La clave primaria ya tiene índice",
+      "Demasiados índices frenan los INSERT"
+    ],
+    "example": "CREATE INDEX idx_usuarios_email\nON usuarios (email);",
+    "docUrl": "https://www.postgresql.org/docs/current/indexes-intro.html",
+    "docLabel": "PostgreSQL — Introducción a los índices (en inglés)",
+    "glyph": "zap",
+    "quiz": [
+      {
+        "q": "¿Qué mejora un índice?",
+        "options": ["La velocidad de las búsquedas", "La seguridad", "El espacio en disco"],
+        "answer": 0
+      }
+    ]
+  },
+  {
+    "id": "sql-group-by",
+    "seriesId": "sql",
+    "title": "GROUP BY y agregaciones",
+    "category": "Rendimiento",
+    "stage": 4,
+    "rarity": "epic",
+    "summary": "Las funciones de agregación (COUNT, SUM, AVG, MAX) resumen muchas filas en un valor. GROUP BY calcula ese resumen por grupos.",
+    "keyPoints": [
+      "COUNT(*) cuenta filas",
+      "HAVING filtra grupos (WHERE filtra filas)",
+      "Lo que no se agrega va en GROUP BY"
+    ],
+    "example": "SELECT pais, COUNT(*) AS total\nFROM usuarios\nGROUP BY pais\nHAVING COUNT(*) > 10;",
+    "docUrl": "https://www.postgresql.org/docs/current/tutorial-agg.html",
+    "docLabel": "PostgreSQL — Funciones de agregación (en inglés)",
+    "glyph": "chart-column",
+    "quiz": [
+      {
+        "q": "¿Qué cláusula filtra después de agrupar?",
+        "options": ["WHERE", "HAVING", "FILTER BY"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "sql-join",
+    "seriesId": "sql",
+    "title": "JOIN",
+    "category": "Relaciones",
+    "stage": 4,
+    "rarity": "epic",
+    "summary": "JOIN combina filas de dos tablas relacionadas en una sola consulta, normalmente uniendo una clave foránea con su clave primaria.",
+    "keyPoints": [
+      "INNER JOIN: solo filas con pareja",
+      "LEFT JOIN: todas las de la izquierda",
+      "ON indica cómo se relacionan"
+    ],
+    "example": "SELECT u.nombre, p.total\nFROM pedidos p\nJOIN usuarios u ON u.id = p.usuario_id;",
+    "docUrl": "https://www.postgresql.org/docs/current/tutorial-join.html",
+    "docLabel": "PostgreSQL — Joins entre tablas (en inglés)",
+    "glyph": "combine",
+    "quiz": [
+      {
+        "q": "¿Qué JOIN mantiene todas las filas de la tabla izquierda?",
+        "options": ["INNER JOIN", "LEFT JOIN", "CROSS JOIN"],
+        "answer": 1
+      },
+      {
+        "q": "¿Qué palabra indica la condición de unión?",
+        "options": ["WHERE", "ON", "WITH"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "sql-transacciones",
+    "seriesId": "sql",
+    "title": "Transacciones",
+    "category": "Rendimiento",
+    "stage": 4,
+    "rarity": "legendary",
+    "summary": "Una transacción agrupa varias operaciones para que se apliquen todas o ninguna. Si algo falla, ROLLBACK deshace todo.",
+    "keyPoints": [
+      "BEGIN abre, COMMIT confirma",
+      "ROLLBACK deshace los cambios",
+      "Imprescindible para pagos y transferencias"
+    ],
+    "example": "BEGIN;\nUPDATE cuentas SET saldo = saldo - 100 WHERE id = 1;\nUPDATE cuentas SET saldo = saldo + 100 WHERE id = 2;\nCOMMIT;",
+    "docUrl": "https://www.postgresql.org/docs/current/tutorial-transactions.html",
+    "docLabel": "PostgreSQL — Transacciones (en inglés)",
+    "glyph": "arrow-left-right",
+    "quiz": [
+      {
+        "q": "¿Qué comando deshace una transacción?",
+        "options": ["COMMIT", "ROLLBACK", "UNDO"],
+        "answer": 1
+      },
+      {
+        "q": "En una transacción, si una operación falla...",
+        "options": ["Se aplican las demás", "No se aplica ninguna", "Se repite sola"],
+        "answer": 1
+      }
+    ]
+  }
+]

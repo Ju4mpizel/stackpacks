@@ -1,0 +1,382 @@
+[
+  {
+    "id": "git-que-es",
+    "seriesId": "git",
+    "title": "Control de versiones",
+    "category": "Fundamentos",
+    "stage": 1,
+    "rarity": "common",
+    "summary": "Un sistema de control de versiones guarda el historial de cambios de tus archivos para que puedas volver atrás y trabajar en equipo. Git es el más usado.",
+    "keyPoints": [
+      "Cada versión guardada es un commit",
+      "Git es distribuido: cada copia tiene todo el historial",
+      "GitHub es un servicio que aloja repositorios Git"
+    ],
+    "example": "git --version\ngit config --global user.name \"Ana\"\ngit config --global user.email \"ana@ejemplo.com\"",
+    "docUrl": "https://git-scm.com/book/es/v2/Inicio---Sobre-el-Control-de-Versiones-Acerca-del-Control-de-Versiones",
+    "docLabel": "Pro Git — Acerca del control de versiones",
+    "glyph": "archive",
+    "quiz": [
+      {
+        "q": "¿Qué es GitHub?",
+        "options": ["Otro nombre de Git", "Un servicio que aloja repositorios Git", "Un editor de código"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "git-init-clone",
+    "seriesId": "git",
+    "title": "init y clone",
+    "category": "Fundamentos",
+    "stage": 1,
+    "rarity": "common",
+    "summary": "git init convierte una carpeta en un repositorio nuevo. git clone descarga una copia completa de un repositorio que ya existe.",
+    "keyPoints": [
+      "init crea la carpeta oculta .git",
+      "clone trae todo el historial",
+      "Solo se hacen una vez por proyecto"
+    ],
+    "example": "git init\n# o bien\ngit clone https://github.com/usuario/proyecto.git",
+    "docUrl": "https://git-scm.com/book/es/v2/Fundamentos-de-Git-Obteniendo-un-repositorio-Git",
+    "docLabel": "Pro Git — Obtener un repositorio Git",
+    "glyph": "folder-git-2",
+    "quiz": [
+      {
+        "q": "¿Qué comando copia un repositorio existente?",
+        "options": ["git init", "git clone", "git copy"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "git-status",
+    "seriesId": "git",
+    "title": "git status",
+    "category": "Fundamentos",
+    "stage": 1,
+    "rarity": "common",
+    "summary": "git status muestra qué archivos han cambiado, cuáles están preparados para el próximo commit y cuáles Git aún no sigue.",
+    "keyPoints": [
+      "Úsalo antes de cada commit",
+      "Untracked = archivo nuevo sin seguir",
+      "-s da una versión corta"
+    ],
+    "example": "git status\ngit status -s",
+    "docUrl": "https://git-scm.com/book/es/v2/Fundamentos-de-Git-Guardando-cambios-en-el-Repositorio",
+    "docLabel": "Pro Git — Guardar cambios en el repositorio",
+    "glyph": "scan-search",
+    "quiz": [
+      {
+        "q": "¿Qué significa \"untracked\"?",
+        "options": ["Archivo borrado", "Archivo que Git todavía no sigue", "Archivo con conflicto"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "git-add",
+    "seriesId": "git",
+    "title": "git add",
+    "category": "Fundamentos",
+    "stage": 1,
+    "rarity": "uncommon",
+    "summary": "git add pasa cambios al área de preparación (staging): eliges exactamente qué entrará en el próximo commit.",
+    "keyPoints": [
+      "git add archivo prepara un archivo",
+      "git add . prepara todo lo de la carpeta",
+      "git restore --staged lo saca del staging"
+    ],
+    "example": "git add index.html\ngit add .\ngit restore --staged index.html",
+    "docUrl": "https://git-scm.com/book/es/v2/Fundamentos-de-Git-Guardando-cambios-en-el-Repositorio",
+    "docLabel": "Pro Git — Guardar cambios en el repositorio",
+    "glyph": "file-plus",
+    "quiz": [
+      {
+        "q": "¿Qué hace git add?",
+        "options": ["Sube los cambios a GitHub", "Prepara cambios para el próximo commit", "Crea una rama"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "git-commit",
+    "seriesId": "git",
+    "title": "git commit",
+    "category": "Historial",
+    "stage": 2,
+    "rarity": "rare",
+    "summary": "Un commit es una foto del proyecto con los cambios preparados, junto con un mensaje que explica qué cambió y por qué.",
+    "keyPoints": [
+      "Solo incluye lo que está en staging",
+      "-m añade el mensaje en la misma línea",
+      "Commits pequeños y frecuentes"
+    ],
+    "example": "git add .\ngit commit -m \"Añade formulario de contacto\"",
+    "docUrl": "https://git-scm.com/book/es/v2/Fundamentos-de-Git-Guardando-cambios-en-el-Repositorio",
+    "docLabel": "Pro Git — Guardar cambios en el repositorio",
+    "glyph": "git-commit-horizontal",
+    "quiz": [
+      {
+        "q": "¿Qué cambios entran en un commit?",
+        "options": ["Todos los archivos modificados", "Solo los que están en staging", "Solo los archivos nuevos"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "git-log",
+    "seriesId": "git",
+    "title": "git log",
+    "category": "Historial",
+    "stage": 2,
+    "rarity": "uncommon",
+    "summary": "git log muestra el historial de commits: quién hizo cada cambio, cuándo y con qué mensaje.",
+    "keyPoints": [
+      "--oneline muestra un commit por línea",
+      "--graph dibuja las ramas",
+      "Cada commit tiene un hash único"
+    ],
+    "example": "git log\ngit log --oneline --graph",
+    "docUrl": "https://git-scm.com/book/es/v2/Fundamentos-de-Git-Ver-el-Historial-de-Confirmaciones",
+    "docLabel": "Pro Git — Ver el historial de confirmaciones",
+    "glyph": "scroll-text",
+    "quiz": [
+      {
+        "q": "¿Qué opción muestra cada commit en una sola línea?",
+        "options": ["--short", "--oneline", "--compact"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "git-gitignore",
+    "seriesId": "git",
+    "title": ".gitignore",
+    "category": "Historial",
+    "stage": 2,
+    "rarity": "uncommon",
+    "summary": ".gitignore es un archivo con patrones de lo que Git no debe seguir, como dependencias, archivos generados o claves secretas.",
+    "keyPoints": [
+      "Nunca subas .env ni contraseñas",
+      "node_modules/ siempre va ignorado",
+      "Los patrones admiten * y /"
+    ],
+    "example": "node_modules/\n.env\n*.log\ndist/",
+    "docUrl": "https://docs.github.com/es/get-started/git-basics/ignoring-files",
+    "docLabel": "GitHub Docs — Ignorar archivos",
+    "glyph": "eye-off",
+    "quiz": [
+      {
+        "q": "¿Qué archivo NO deberías subir nunca?",
+        "options": ["README.md", ".env con claves", "index.html"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "git-deshacer",
+    "seriesId": "git",
+    "title": "Deshacer cambios",
+    "category": "Historial",
+    "stage": 2,
+    "rarity": "rare",
+    "summary": "Git permite deshacer: descartar cambios de un archivo, sacar algo del staging o corregir el último commit.",
+    "keyPoints": [
+      "git restore archivo descarta cambios locales",
+      "git commit --amend corrige el último commit",
+      "No reescribas commits ya compartidos"
+    ],
+    "example": "git restore index.html\ngit commit --amend -m \"Mensaje corregido\"",
+    "docUrl": "https://git-scm.com/book/es/v2/Fundamentos-de-Git-Deshacer-Cosas",
+    "docLabel": "Pro Git — Deshacer cosas",
+    "glyph": "undo-2",
+    "quiz": [
+      {
+        "q": "¿Qué comando corrige el último commit?",
+        "options": ["git undo", "git commit --amend", "git fix"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "git-ramas",
+    "seriesId": "git",
+    "title": "Ramas",
+    "category": "Ramas",
+    "stage": 3,
+    "rarity": "rare",
+    "summary": "Una rama es una línea de trabajo independiente. Te permite desarrollar una función nueva sin tocar la rama principal.",
+    "keyPoints": [
+      "git switch -c crea una rama y te mueve a ella",
+      "main suele ser la rama estable",
+      "Crear ramas en Git es instantáneo"
+    ],
+    "example": "git switch -c nueva-funcion\ngit branch          # lista las ramas\ngit switch main",
+    "docUrl": "https://git-scm.com/book/es/v2/Ramificaciones-en-Git-%C2%BFQu%C3%A9-es-una-rama%3F",
+    "docLabel": "Pro Git — ¿Qué es una rama?",
+    "glyph": "git-branch",
+    "quiz": [
+      {
+        "q": "¿Qué comando crea una rama y cambia a ella?",
+        "options": ["git branch -d", "git switch -c", "git merge"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "git-merge",
+    "seriesId": "git",
+    "title": "git merge",
+    "category": "Ramas",
+    "stage": 3,
+    "rarity": "epic",
+    "summary": "git merge une el trabajo de una rama dentro de la rama en la que estás, combinando los historiales.",
+    "keyPoints": [
+      "Primero cambia a la rama que recibe los cambios",
+      "Fast-forward: solo avanza el puntero",
+      "Si ambas cambiaron, se crea un commit de fusión"
+    ],
+    "example": "git switch main\ngit merge nueva-funcion\ngit branch -d nueva-funcion",
+    "docUrl": "https://git-scm.com/book/es/v2/Ramificaciones-en-Git-Procedimientos-B%C3%A1sicos-para-Ramificar-y-Fusionar",
+    "docLabel": "Pro Git — Procedimientos básicos para ramificar y fusionar",
+    "glyph": "git-merge",
+    "quiz": [
+      {
+        "q": "Para fusionar nueva-funcion en main, ¿dónde debes estar?",
+        "options": ["En nueva-funcion", "En main", "Da igual"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "git-conflictos",
+    "seriesId": "git",
+    "title": "Conflictos",
+    "category": "Ramas",
+    "stage": 3,
+    "rarity": "epic",
+    "summary": "Hay un conflicto cuando dos ramas cambian las mismas líneas. Git marca la zona y tú decides qué versión queda.",
+    "keyPoints": [
+      "Busca las marcas <<<<<<< ======= >>>>>>>",
+      "Edita, borra las marcas y guarda",
+      "Después: git add y git commit"
+    ],
+    "example": "<<<<<<< HEAD\ntítulo azul\n=======\ntítulo rojo\n>>>>>>> nueva-funcion",
+    "docUrl": "https://git-scm.com/book/es/v2/Ramificaciones-en-Git-Procedimientos-B%C3%A1sicos-para-Ramificar-y-Fusionar",
+    "docLabel": "Pro Git — Principales conflictos que pueden surgir en las fusiones",
+    "glyph": "swords",
+    "quiz": [
+      {
+        "q": "Después de resolver un conflicto, ¿qué haces?",
+        "options": ["git reset", "git add y git commit", "Borrar la rama"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "git-remote",
+    "seriesId": "git",
+    "title": "Remotos",
+    "category": "Colaboración",
+    "stage": 4,
+    "rarity": "uncommon",
+    "summary": "Un remoto es una copia del repositorio en otro sitio, normalmente GitHub. origin es el nombre que se le da por defecto.",
+    "keyPoints": [
+      "git remote -v lista los remotos",
+      "origin es el remoto por defecto",
+      "Puedes tener varios remotos"
+    ],
+    "example": "git remote add origin https://github.com/ana/web.git\ngit remote -v",
+    "docUrl": "https://git-scm.com/book/es/v2/Fundamentos-de-Git-Trabajar-con-Remotos",
+    "docLabel": "Pro Git — Trabajar con remotos",
+    "glyph": "cloud",
+    "quiz": [
+      {
+        "q": "¿Cómo se llama el remoto por defecto?",
+        "options": ["main", "origin", "github"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "git-push-pull",
+    "seriesId": "git",
+    "title": "push y pull",
+    "category": "Colaboración",
+    "stage": 4,
+    "rarity": "rare",
+    "summary": "git push sube tus commits al remoto y git pull descarga e integra los cambios que otros subieron.",
+    "keyPoints": [
+      "Haz pull antes de empezar a trabajar",
+      "-u enlaza tu rama con la remota",
+      "push falla si el remoto tiene cambios que no tienes"
+    ],
+    "example": "git pull\ngit push -u origin nueva-funcion",
+    "docUrl": "https://git-scm.com/book/es/v2/Fundamentos-de-Git-Trabajar-con-Remotos",
+    "docLabel": "Pro Git — Trabajar con remotos",
+    "glyph": "arrow-down-up",
+    "quiz": [
+      {
+        "q": "¿Qué comando sube tus commits al remoto?",
+        "options": ["git pull", "git push", "git upload"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "git-mensajes",
+    "seriesId": "git",
+    "title": "Buenos mensajes de commit",
+    "category": "Colaboración",
+    "stage": 4,
+    "rarity": "uncommon",
+    "summary": "Un buen mensaje de commit explica en una línea corta qué cambia, en imperativo, y si hace falta añade el porqué debajo.",
+    "keyPoints": [
+      "Primera línea de 50 caracteres o menos",
+      "En imperativo: \"Añade\", \"Corrige\"",
+      "Un commit = un cambio lógico"
+    ],
+    "example": "git commit -m \"Corrige el cálculo del total\" \\\n  -m \"El IVA se sumaba dos veces en el carrito.\"",
+    "docUrl": "https://git-scm.com/book/es/v2/Git-en-entornos-distribuidos-Contribuyendo-a-un-Proyecto",
+    "docLabel": "Pro Git — Contribuir a un proyecto",
+    "glyph": "message-square-text",
+    "quiz": [
+      {
+        "q": "¿Cuál es un mejor mensaje de commit?",
+        "options": ["\"cambios\"", "\"Corrige el botón de enviar en móvil\"", "\"asdf\""],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "git-pull-requests",
+    "seriesId": "git",
+    "title": "Pull requests",
+    "category": "Colaboración",
+    "stage": 4,
+    "rarity": "legendary",
+    "summary": "Un pull request propone fusionar tu rama en otra. El equipo revisa el código, comenta y lo aprueba antes de integrarlo.",
+    "keyPoints": [
+      "Se abre desde una rama subida a GitHub",
+      "Permite revisar y comentar línea a línea",
+      "Describe qué cambia y cómo probarlo"
+    ],
+    "example": "git switch -c arregla-menu\ngit commit -am \"Arregla el menú en móvil\"\ngit push -u origin arregla-menu\n# Abre el pull request en GitHub",
+    "docUrl": "https://docs.github.com/es/pull-requests/reference/pull-requests",
+    "docLabel": "GitHub Docs — Acerca de las solicitudes de incorporación de cambios",
+    "glyph": "git-pull-request",
+    "quiz": [
+      {
+        "q": "¿Para qué sirve un pull request?",
+        "options": ["Para descargar cambios", "Para proponer y revisar cambios antes de fusionarlos", "Para borrar una rama"],
+        "answer": 1
+      },
+      {
+        "q": "¿Qué necesitas antes de abrir un pull request?",
+        "options": ["Una rama subida al remoto", "Borrar main", "Hacer git init"],
+        "answer": 0
+      }
+    ]
+  }
+]

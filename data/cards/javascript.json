@@ -1,0 +1,467 @@
+[
+  {
+    "id": "js-variables",
+    "seriesId": "javascript",
+    "title": "let y const",
+    "category": "Fundamentos",
+    "stage": 1,
+    "rarity": "common",
+    "summary": "Las variables guardan valores con un nombre. Usa const si no vas a reasignarla y let si va a cambiar.",
+    "keyPoints": [
+      "const por defecto, let solo si cambia",
+      "Evita var: tiene reglas confusas",
+      "const no congela objetos, solo la asignación"
+    ],
+    "example": "const nombre = \"Ana\";\nlet puntos = 0;\npuntos = puntos + 10;",
+    "docUrl": "https://developer.mozilla.org/es/docs/Learn_web_development/Core/Scripting/Variables",
+    "docLabel": "MDN — Almacenar información en variables",
+    "glyph": "box",
+    "quiz": [
+      {
+        "q": "¿Qué usarías para un valor que no se reasigna?",
+        "options": ["let", "const", "var"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "js-tipos",
+    "seriesId": "javascript",
+    "title": "Tipos de datos",
+    "category": "Fundamentos",
+    "stage": 1,
+    "rarity": "common",
+    "summary": "JavaScript tiene tipos primitivos (string, number, boolean, null, undefined...) y objetos. typeof te dice el tipo de un valor.",
+    "keyPoints": [
+      "Las variables no tienen tipo fijo",
+      "undefined = sin valor asignado",
+      "typeof null devuelve \"object\" (error histórico)"
+    ],
+    "example": "typeof \"hola\";   // \"string\"\ntypeof 42;       // \"number\"\ntypeof true;     // \"boolean\"\ntypeof undefined; // \"undefined\"",
+    "docUrl": "https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Data_structures",
+    "docLabel": "MDN — Tipos de datos y estructuras",
+    "glyph": "shapes",
+    "quiz": [
+      {
+        "q": "¿Qué devuelve typeof 42?",
+        "options": ["\"integer\"", "\"number\"", "\"numeric\""],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "js-operadores",
+    "seriesId": "javascript",
+    "title": "Operadores",
+    "category": "Fundamentos",
+    "stage": 1,
+    "rarity": "common",
+    "summary": "Los operadores combinan valores: aritméticos (+ - * /), de comparación (=== !==) y lógicos (&& || !).",
+    "keyPoints": [
+      "Usa === en vez de ==",
+      "&& y || devuelven uno de los operandos",
+      "?? da un valor por defecto si hay null o undefined"
+    ],
+    "example": "5 === \"5\";        // false\n3 > 2 && 2 > 1;   // true\nconst n = null ?? 10; // 10",
+    "docUrl": "https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Expressions_and_operators",
+    "docLabel": "MDN — Expresiones y operadores",
+    "glyph": "calculator",
+    "quiz": [
+      {
+        "q": "¿Qué devuelve 5 === \"5\"?",
+        "options": ["true", "false", "Un error"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "js-condicionales",
+    "seriesId": "javascript",
+    "title": "Condicionales",
+    "category": "Fundamentos",
+    "stage": 1,
+    "rarity": "uncommon",
+    "summary": "if / else ejecuta un bloque u otro según una condición. El operador ternario es una versión corta para elegir un valor.",
+    "keyPoints": [
+      "else if encadena varias condiciones",
+      "Ternario: condición ? siSí : siNo",
+      "0, \"\", null y undefined son falsos"
+    ],
+    "example": "if (edad >= 18) {\n  console.log(\"Adulto\");\n} else {\n  console.log(\"Menor\");\n}",
+    "docUrl": "https://developer.mozilla.org/es/docs/Learn_web_development/Core/Scripting/Conditionals",
+    "docLabel": "MDN — Tomar decisiones en tu código",
+    "glyph": "git-fork",
+    "quiz": [
+      {
+        "q": "¿Cuál de estos valores es falso en un if?",
+        "options": ["\"hola\"", "0", "[]"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "js-bucles",
+    "seriesId": "javascript",
+    "title": "Bucles",
+    "category": "Lógica",
+    "stage": 2,
+    "rarity": "uncommon",
+    "summary": "Los bucles repiten código. for clásico cuenta pasos, for...of recorre los elementos de un array y while repite mientras se cumpla algo.",
+    "keyPoints": [
+      "for...of para recorrer arrays",
+      "break sale del bucle, continue salta una vuelta",
+      "Cuidado con los bucles infinitos"
+    ],
+    "example": "const frutas = [\"pera\", \"kiwi\"];\nfor (const fruta of frutas) {\n  console.log(fruta);\n}",
+    "docUrl": "https://developer.mozilla.org/es/docs/Learn_web_development/Core/Scripting/Loops",
+    "docLabel": "MDN — Bucles",
+    "glyph": "repeat",
+    "quiz": [
+      {
+        "q": "¿Qué bucle recorre directamente los valores de un array?",
+        "options": ["for...in", "for...of", "do...if"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "js-funciones",
+    "seriesId": "javascript",
+    "title": "Funciones",
+    "category": "Lógica",
+    "stage": 2,
+    "rarity": "rare",
+    "summary": "Una función es un bloque de código reutilizable que recibe parámetros y puede devolver un valor con return.",
+    "keyPoints": [
+      "Sin return devuelve undefined",
+      "Los parámetros pueden tener valor por defecto",
+      "Una función hace una sola cosa"
+    ],
+    "example": "function saludar(nombre = \"amigo\") {\n  return `Hola, ${nombre}`;\n}\nsaludar(\"Ana\"); // \"Hola, Ana\"",
+    "docUrl": "https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Functions",
+    "docLabel": "MDN — Funciones",
+    "glyph": "square-function",
+    "quiz": [
+      {
+        "q": "¿Qué devuelve una función sin return?",
+        "options": ["null", "0", "undefined"],
+        "answer": 2
+      }
+    ]
+  },
+  {
+    "id": "js-arrow",
+    "seriesId": "javascript",
+    "title": "Arrow functions",
+    "category": "Lógica",
+    "stage": 2,
+    "rarity": "uncommon",
+    "summary": "Las funciones flecha son una forma corta de escribir funciones. Si el cuerpo es una sola expresión, la devuelven sin escribir return.",
+    "keyPoints": [
+      "(a, b) => a + b devuelve la suma",
+      "Con llaves necesitas return",
+      "No tienen su propio this"
+    ],
+    "example": "const doble = (n) => n * 2;\nconst sumar = (a, b) => {\n  return a + b;\n};",
+    "docUrl": "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Functions/Arrow_functions",
+    "docLabel": "MDN — Funciones flecha",
+    "glyph": "arrow-right",
+    "quiz": [
+      {
+        "q": "¿Qué devuelve (n) => n * 2 al llamarla con 4?",
+        "options": ["undefined", "8", "\"n * 2\""],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "js-objetos",
+    "seriesId": "javascript",
+    "title": "Objetos",
+    "category": "Lógica",
+    "stage": 2,
+    "rarity": "uncommon",
+    "summary": "Un objeto agrupa datos relacionados en pares clave: valor. Accedes a ellos con punto o con corchetes.",
+    "keyPoints": [
+      "obj.clave o obj[\"clave\"]",
+      "Puedes añadir propiedades en cualquier momento",
+      "Los métodos son funciones dentro del objeto"
+    ],
+    "example": "const carta = { titulo: \"Fetch\", rareza: \"legendary\" };\ncarta.titulo;      // \"Fetch\"\ncarta[\"rareza\"];   // \"legendary\"",
+    "docUrl": "https://developer.mozilla.org/es/docs/Learn_web_development/Core/Scripting/Object_basics",
+    "docLabel": "MDN — Conceptos básicos de los objetos",
+    "glyph": "braces",
+    "quiz": [
+      {
+        "q": "¿Cómo lees la propiedad titulo de carta?",
+        "options": ["carta->titulo", "carta.titulo", "carta(titulo)"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "js-arrays",
+    "seriesId": "javascript",
+    "title": "Arrays: map y filter",
+    "category": "Lógica",
+    "stage": 2,
+    "rarity": "rare",
+    "summary": "Un array es una lista ordenada. map transforma cada elemento y filter se queda con los que cumplen una condición, sin modificar el original.",
+    "keyPoints": [
+      "map devuelve un array del mismo tamaño",
+      "filter devuelve los que pasan la prueba",
+      "Ninguno modifica el array original"
+    ],
+    "example": "const nums = [1, 2, 3, 4];\nconst dobles = nums.map((n) => n * 2);   // [2,4,6,8]\nconst pares = nums.filter((n) => n % 2 === 0); // [2,4]",
+    "docUrl": "https://developer.mozilla.org/es/docs/Learn_web_development/Core/Scripting/Arrays",
+    "docLabel": "MDN — Arrays",
+    "glyph": "list-ordered",
+    "quiz": [
+      {
+        "q": "¿Qué método elige solo algunos elementos?",
+        "options": ["map", "filter", "push"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "js-desestructuracion",
+    "seriesId": "javascript",
+    "title": "Desestructuración",
+    "category": "Navegador",
+    "stage": 3,
+    "rarity": "uncommon",
+    "summary": "La desestructuración extrae valores de arrays u objetos y los guarda en variables en una sola línea.",
+    "keyPoints": [
+      "De objetos por nombre: { a, b }",
+      "De arrays por posición: [x, y]",
+      "Admite valores por defecto"
+    ],
+    "example": "const { titulo, rareza = \"common\" } = carta;\nconst [primero, segundo] = [10, 20];",
+    "docUrl": "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Destructuring",
+    "docLabel": "MDN — Desestructuración",
+    "glyph": "split",
+    "quiz": [
+      {
+        "q": "En const [a, b] = [1, 2], ¿cuánto vale b?",
+        "options": ["1", "2", "undefined"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "js-json",
+    "seriesId": "javascript",
+    "title": "JSON",
+    "category": "Navegador",
+    "stage": 3,
+    "rarity": "uncommon",
+    "summary": "JSON es un formato de texto para intercambiar datos. JSON.stringify convierte un objeto en texto y JSON.parse hace lo contrario.",
+    "keyPoints": [
+      "Las claves van siempre entre comillas dobles",
+      "No admite funciones ni undefined",
+      "Es el formato habitual de las APIs"
+    ],
+    "example": "const texto = JSON.stringify({ ok: true }); // '{\"ok\":true}'\nconst datos = JSON.parse(texto);\ndatos.ok; // true",
+    "docUrl": "https://developer.mozilla.org/es/docs/Learn_web_development/Core/Scripting/JSON",
+    "docLabel": "MDN — Trabajar con JSON",
+    "glyph": "file-braces",
+    "quiz": [
+      {
+        "q": "¿Qué función convierte texto JSON en un objeto?",
+        "options": ["JSON.stringify", "JSON.parse", "JSON.object"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "js-modulos",
+    "seriesId": "javascript",
+    "title": "Módulos",
+    "category": "Navegador",
+    "stage": 3,
+    "rarity": "rare",
+    "summary": "Los módulos dividen el código en archivos. Con export compartes funciones o valores y con import los usas en otro archivo.",
+    "keyPoints": [
+      "export nombrado vs export default",
+      "import { x } from \"./archivo.js\"",
+      "En el navegador: <script type=\"module\">"
+    ],
+    "example": "// math.js\nexport const sumar = (a, b) => a + b;\n\n// main.js\nimport { sumar } from \"./math.js\";",
+    "docUrl": "https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Modules",
+    "docLabel": "MDN — Módulos JavaScript",
+    "glyph": "package",
+    "quiz": [
+      {
+        "q": "¿Qué palabra hace que algo se pueda usar desde otro archivo?",
+        "options": ["public", "export", "share"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "js-eventos",
+    "seriesId": "javascript",
+    "title": "Eventos",
+    "category": "Navegador",
+    "stage": 3,
+    "rarity": "rare",
+    "summary": "Los eventos avisan cuando pasa algo (un clic, una tecla, enviar un formulario). addEventListener ejecuta una función cuando ocurre.",
+    "keyPoints": [
+      "addEventListener(\"click\", fn)",
+      "event.preventDefault() evita la acción por defecto",
+      "event.target es el elemento que lo disparó"
+    ],
+    "example": "const boton = document.querySelector(\"#abrir\");\nboton.addEventListener(\"click\", () => {\n  console.log(\"¡Sobre abierto!\");\n});",
+    "docUrl": "https://developer.mozilla.org/es/docs/Learn_web_development/Core/Scripting/Events",
+    "docLabel": "MDN — Introducción a los eventos",
+    "glyph": "mouse-pointer-click",
+    "quiz": [
+      {
+        "q": "¿Qué método evita que un formulario recargue la página?",
+        "options": ["event.stop()", "event.preventDefault()", "event.cancel()"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "js-dom",
+    "seriesId": "javascript",
+    "title": "El DOM",
+    "category": "Navegador",
+    "stage": 3,
+    "rarity": "epic",
+    "summary": "El DOM es la representación de la página como un árbol de objetos. Desde JavaScript puedes buscar elementos y cambiar su contenido o estilo.",
+    "keyPoints": [
+      "querySelector busca con selectores CSS",
+      "textContent cambia el texto",
+      "classList añade o quita clases"
+    ],
+    "example": "const titulo = document.querySelector(\"h1\");\ntitulo.textContent = \"¡Hola!\";\ntitulo.classList.add(\"activo\");",
+    "docUrl": "https://developer.mozilla.org/es/docs/Web/API/Document_Object_Model",
+    "docLabel": "MDN — Modelo de Objetos del Documento",
+    "glyph": "network",
+    "quiz": [
+      {
+        "q": "¿Qué método busca un elemento con un selector CSS?",
+        "options": ["document.find()", "document.querySelector()", "document.css()"],
+        "answer": 1
+      },
+      {
+        "q": "¿Qué propiedad cambia el texto de un elemento?",
+        "options": ["textContent", "value", "text()"],
+        "answer": 0
+      }
+    ]
+  },
+  {
+    "id": "js-errores",
+    "seriesId": "javascript",
+    "title": "Manejo de errores",
+    "category": "Asincronía",
+    "stage": 4,
+    "rarity": "rare",
+    "summary": "try / catch ejecuta código que puede fallar y, si lanza un error, lo captura para que el programa no se rompa.",
+    "keyPoints": [
+      "throw lanza un error propio",
+      "finally se ejecuta siempre",
+      "Con async/await también se usa try/catch"
+    ],
+    "example": "try {\n  JSON.parse(\"no es json\");\n} catch (error) {\n  console.error(\"Falló:\", error.message);\n}",
+    "docUrl": "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/try...catch",
+    "docLabel": "MDN — try...catch",
+    "glyph": "shield-exclamation-point",
+    "quiz": [
+      {
+        "q": "¿Qué bloque se ejecuta siempre, haya error o no?",
+        "options": ["catch", "finally", "always"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "js-promesas",
+    "seriesId": "javascript",
+    "title": "Promesas",
+    "category": "Asincronía",
+    "stage": 4,
+    "rarity": "epic",
+    "summary": "Una Promise representa un valor que llegará en el futuro. Puede cumplirse (resolve) o fallar (reject), y reaccionas con then y catch.",
+    "keyPoints": [
+      "Estados: pendiente, cumplida o rechazada",
+      ".then() recibe el resultado",
+      ".catch() recibe el error"
+    ],
+    "example": "fetch(\"/api/cartas\")\n  .then((res) => res.json())\n  .then((cartas) => console.log(cartas))\n  .catch((err) => console.error(err));",
+    "docUrl": "https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Using_promises",
+    "docLabel": "MDN — Usar promesas",
+    "glyph": "hourglass",
+    "quiz": [
+      {
+        "q": "¿Qué método recibe el error de una Promise?",
+        "options": [".then()", ".catch()", ".error()"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "js-async-await",
+    "seriesId": "javascript",
+    "title": "async / await",
+    "category": "Asincronía",
+    "stage": 4,
+    "rarity": "legendary",
+    "summary": "async / await permite escribir código asíncrono como si fuera secuencial: await espera a que una Promise se resuelva.",
+    "keyPoints": [
+      "await solo funciona dentro de funciones async",
+      "Una función async siempre devuelve una Promise",
+      "Captura errores con try / catch"
+    ],
+    "example": "async function cargar() {\n  const res = await fetch(\"/api/cartas\");\n  return await res.json();\n}",
+    "docUrl": "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/async_function",
+    "docLabel": "MDN — async function",
+    "glyph": "timer",
+    "quiz": [
+      {
+        "q": "¿Qué devuelve siempre una función async?",
+        "options": ["Un valor normal", "Una Promise", "undefined"],
+        "answer": 1
+      },
+      {
+        "q": "¿Dónde puedes usar await?",
+        "options": ["En cualquier función", "Dentro de funciones async", "Solo en bucles"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "js-fetch",
+    "seriesId": "javascript",
+    "title": "Fetch API",
+    "category": "Asincronía",
+    "stage": 4,
+    "rarity": "legendary",
+    "summary": "fetch() pide datos a un servidor y devuelve una Promesa con la respuesta.",
+    "keyPoints": [
+      "Devuelve una Promise",
+      "Hay que llamar a res.json()",
+      "No falla con 404: revisa res.ok"
+    ],
+    "example": "const res = await fetch(url);\nif (!res.ok) throw new Error(res.status);\nconst data = await res.json();",
+    "docUrl": "https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Using_Fetch",
+    "docLabel": "MDN — Uso de Fetch",
+    "glyph": "plug",
+    "quiz": [
+      {
+        "q": "¿Qué devuelve fetch()?",
+        "options": ["Un objeto JSON", "Una Promise", "Un string"],
+        "answer": 1
+      },
+      {
+        "q": "Si el servidor responde 404, fetch()...",
+        "options": ["Lanza un error", "Se resuelve y res.ok es false", "Devuelve null"],
+        "answer": 1
+      }
+    ]
+  }
+]

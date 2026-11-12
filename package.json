@@ -2,13 +2,16 @@
   "name": "stackpacks",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "validate:data": "node scripts/validate-data.mjs",
+    "validate:urls": "node scripts/validate-data.mjs --urls"
   },
   "dependencies": {
     "lucide-react": "^1.71.0",

@@ -1,0 +1,362 @@
+[
+  {
+    "id": "html-documento",
+    "seriesId": "html",
+    "title": "Estructura del documento",
+    "category": "Estructura",
+    "stage": 1,
+    "rarity": "common",
+    "summary": "Toda página HTML empieza con <!DOCTYPE html> y un elemento <html> que contiene un <head> (información) y un <body> (lo que se ve).",
+    "keyPoints": [
+      "<!DOCTYPE html> va siempre en la primera línea",
+      "<head> guarda el título y los metadatos",
+      "<body> contiene todo lo visible"
+    ],
+    "example": "<!DOCTYPE html>\n<html lang=\"es\">\n  <head><title>Mi página</title></head>\n  <body>Hola</body>\n</html>",
+    "docUrl": "https://developer.mozilla.org/es/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax",
+    "docLabel": "MDN — Sintaxis básica de HTML",
+    "glyph": "file-code",
+    "quiz": [
+      {
+        "q": "¿Dónde va el contenido visible de la página?",
+        "options": ["En <head>", "En <body>", "En <title>"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "html-encabezados",
+    "seriesId": "html",
+    "title": "Encabezados y párrafos",
+    "category": "Texto",
+    "stage": 1,
+    "rarity": "common",
+    "summary": "Los encabezados <h1> a <h6> marcan títulos por nivel de importancia y <p> agrupa un párrafo de texto.",
+    "keyPoints": [
+      "Usa un solo <h1> por página",
+      "No te saltes niveles (de h2 a h4)",
+      "Elige el nivel por significado, no por tamaño"
+    ],
+    "example": "<h1>Recetas</h1>\n<h2>Postres</h2>\n<p>El flan es fácil de preparar.</p>",
+    "docUrl": "https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements/Heading_Elements",
+    "docLabel": "MDN — Elementos de encabezado",
+    "glyph": "heading-1",
+    "quiz": [
+      {
+        "q": "¿Cuántos <h1> se recomiendan por página?",
+        "options": ["Uno", "Tres", "Todos los que quieras"],
+        "answer": 0
+      }
+    ]
+  },
+  {
+    "id": "html-atributos",
+    "seriesId": "html",
+    "title": "Atributos",
+    "category": "Estructura",
+    "stage": 1,
+    "rarity": "common",
+    "summary": "Los atributos añaden información extra a una etiqueta. Se escriben en la etiqueta de apertura como nombre=\"valor\".",
+    "keyPoints": [
+      "Van siempre en la etiqueta de apertura",
+      "id identifica un elemento único",
+      "class agrupa elementos para darles estilo"
+    ],
+    "example": "<p id=\"intro\" class=\"destacado\">\n  Bienvenido\n</p>",
+    "docUrl": "https://developer.mozilla.org/es/docs/Web/HTML/Reference/Global_attributes",
+    "docLabel": "MDN — Atributos globales",
+    "glyph": "tag",
+    "quiz": [
+      {
+        "q": "¿Dónde se escriben los atributos?",
+        "options": ["En la etiqueta de cierre", "Dentro del texto", "En la etiqueta de apertura"],
+        "answer": 2
+      }
+    ]
+  },
+  {
+    "id": "html-enlaces",
+    "seriesId": "html",
+    "title": "Enlaces",
+    "category": "Texto",
+    "stage": 1,
+    "rarity": "uncommon",
+    "summary": "La etiqueta <a> crea un enlace. El atributo href indica a dónde lleva: otra página, una sección o un correo.",
+    "keyPoints": [
+      "href es el destino del enlace",
+      "target=\"_blank\" lo abre en otra pestaña",
+      "El texto del enlace debe describir el destino"
+    ],
+    "example": "<a href=\"https://developer.mozilla.org\">\n  Ir a MDN\n</a>\n<a href=\"#contacto\">Contacto</a>",
+    "docUrl": "https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements/a",
+    "docLabel": "MDN — El elemento <a>",
+    "glyph": "link",
+    "quiz": [
+      {
+        "q": "¿Qué atributo indica el destino de un enlace?",
+        "options": ["src", "href", "link"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "html-listas",
+    "seriesId": "html",
+    "title": "Listas",
+    "category": "Contenido",
+    "stage": 2,
+    "rarity": "common",
+    "summary": "<ul> crea una lista con viñetas y <ol> una lista numerada. Cada elemento va dentro de un <li>.",
+    "keyPoints": [
+      "ul = sin orden, ol = con orden",
+      "Solo <li> puede ser hijo directo de ul u ol",
+      "Las listas se pueden anidar"
+    ],
+    "example": "<ol>\n  <li>Precalentar el horno</li>\n  <li>Mezclar ingredientes</li>\n</ol>",
+    "docUrl": "https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements/ul",
+    "docLabel": "MDN — El elemento <ul>",
+    "glyph": "list",
+    "quiz": [
+      {
+        "q": "¿Qué etiqueta crea una lista numerada?",
+        "options": ["<ul>", "<ol>", "<li>"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "html-imagenes",
+    "seriesId": "html",
+    "title": "Imágenes",
+    "category": "Contenido",
+    "stage": 2,
+    "rarity": "uncommon",
+    "summary": "<img> inserta una imagen. src indica el archivo y alt describe la imagen para quien no puede verla.",
+    "keyPoints": [
+      "<img> no tiene etiqueta de cierre",
+      "alt es obligatorio para la accesibilidad",
+      "width y height evitan saltos al cargar"
+    ],
+    "example": "<img\n  src=\"gato.jpg\"\n  alt=\"Gato naranja dormido en un sofá\"\n  width=\"400\" height=\"300\"\n>",
+    "docUrl": "https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements/img",
+    "docLabel": "MDN — El elemento <img>",
+    "glyph": "image",
+    "quiz": [
+      {
+        "q": "¿Para qué sirve el atributo alt?",
+        "options": ["Para cambiar el tamaño", "Para describir la imagen", "Para enlazar la imagen"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "html-div-span",
+    "seriesId": "html",
+    "title": "div y span",
+    "category": "Estructura",
+    "stage": 2,
+    "rarity": "uncommon",
+    "summary": "<div> y <span> son contenedores sin significado: div agrupa bloques y span marca un trozo dentro de una línea.",
+    "keyPoints": [
+      "div es de bloque, span es en línea",
+      "Úsalos solo si no hay una etiqueta semántica mejor",
+      "Sirven para aplicar estilos o agrupar"
+    ],
+    "example": "<div class=\"tarjeta\">\n  <p>Precio: <span class=\"oferta\">9 €</span></p>\n</div>",
+    "docUrl": "https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements/div",
+    "docLabel": "MDN — El elemento <div>",
+    "glyph": "box",
+    "quiz": [
+      {
+        "q": "¿Cuál es un contenedor en línea?",
+        "options": ["<div>", "<section>", "<span>"],
+        "answer": 2
+      }
+    ]
+  },
+  {
+    "id": "html-tablas",
+    "seriesId": "html",
+    "title": "Tablas",
+    "category": "Contenido",
+    "stage": 2,
+    "rarity": "uncommon",
+    "summary": "<table> muestra datos en filas y columnas. Cada fila es un <tr>, las celdas son <td> y los encabezados <th>.",
+    "keyPoints": [
+      "Úsalas para datos, no para maquetar",
+      "<th> marca la celda de encabezado",
+      "<thead> y <tbody> separan cabecera y cuerpo"
+    ],
+    "example": "<table>\n  <tr><th>Nombre</th><th>Edad</th></tr>\n  <tr><td>Ana</td><td>28</td></tr>\n</table>",
+    "docUrl": "https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements/table",
+    "docLabel": "MDN — El elemento <table>",
+    "glyph": "table",
+    "quiz": [
+      {
+        "q": "¿Qué etiqueta representa una fila?",
+        "options": ["<td>", "<tr>", "<th>"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "html-meta",
+    "seriesId": "html",
+    "title": "Metadatos en <head>",
+    "category": "Estructura",
+    "stage": 3,
+    "rarity": "uncommon",
+    "summary": "Las etiquetas <meta> del <head> describen la página: codificación, descripción para buscadores y ajuste al móvil.",
+    "keyPoints": [
+      "charset=\"utf-8\" muestra bien tildes y eñes",
+      "viewport adapta la página al móvil",
+      "description aparece en los buscadores"
+    ],
+    "example": "<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <meta name=\"description\" content=\"Recetas fáciles\">\n</head>",
+    "docUrl": "https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements/meta",
+    "docLabel": "MDN — El elemento <meta>",
+    "glyph": "file-search",
+    "quiz": [
+      {
+        "q": "¿Qué meta hace que la página se adapte al móvil?",
+        "options": ["charset", "viewport", "description"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "html-accesibilidad",
+    "seriesId": "html",
+    "title": "Accesibilidad básica",
+    "category": "Semántica",
+    "stage": 3,
+    "rarity": "rare",
+    "summary": "Una web accesible la puede usar cualquiera, también con lector de pantalla o teclado. Empieza por textos alternativos y etiquetas en los formularios.",
+    "keyPoints": [
+      "Toda imagen informativa lleva alt",
+      "Cada campo de formulario tiene su <label>",
+      "Usa <button> para acciones, no un <div>"
+    ],
+    "example": "<label for=\"email\">Correo</label>\n<input id=\"email\" type=\"email\">\n<img src=\"logo.svg\" alt=\"StackPacks\">",
+    "docUrl": "https://developer.mozilla.org/es/docs/Learn_web_development/Core/Accessibility/HTML",
+    "docLabel": "MDN — HTML: una buena base para la accesibilidad",
+    "glyph": "accessibility",
+    "quiz": [
+      {
+        "q": "¿Cómo se conecta un <label> con su campo?",
+        "options": ["Con for igual al id del campo", "Con class", "Poniéndolo debajo"],
+        "answer": 0
+      }
+    ]
+  },
+  {
+    "id": "html-semantica",
+    "seriesId": "html",
+    "title": "Etiquetas semánticas",
+    "category": "Semántica",
+    "stage": 3,
+    "rarity": "epic",
+    "summary": "Las etiquetas semánticas como <header>, <nav>, <main> y <footer> dicen qué es cada parte de la página, no solo cómo se ve.",
+    "keyPoints": [
+      "Ayudan a lectores de pantalla y buscadores",
+      "<main> aparece una sola vez",
+      "<article> es contenido que tiene sentido por sí solo"
+    ],
+    "example": "<header>Logo</header>\n<nav>Menú</nav>\n<main><article>Post</article></main>\n<footer>© 2026</footer>",
+    "docUrl": "https://developer.mozilla.org/es/docs/Learn_web_development/Core/Structuring_content/Structuring_documents",
+    "docLabel": "MDN — Estructura de documentos y sitios web",
+    "glyph": "layout-template",
+    "quiz": [
+      {
+        "q": "¿Qué etiqueta marca el contenido principal?",
+        "options": ["<div id=\"main\">", "<section>", "<main>"],
+        "answer": 2
+      },
+      {
+        "q": "¿Por qué usar etiquetas semánticas?",
+        "options": ["Para que la página cargue más rápido", "Para dar significado al contenido", "Porque tienen estilos propios"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "html-inputs",
+    "seriesId": "html",
+    "title": "Inputs",
+    "category": "Formularios",
+    "stage": 4,
+    "rarity": "rare",
+    "summary": "<input> es un campo de formulario. Su atributo type cambia el tipo de dato: texto, correo, número, fecha, casilla...",
+    "keyPoints": [
+      "type cambia el teclado en el móvil",
+      "name es la clave con la que se envía el dato",
+      "placeholder no sustituye al <label>"
+    ],
+    "example": "<input type=\"email\" name=\"correo\">\n<input type=\"number\" name=\"edad\" min=\"0\">\n<input type=\"checkbox\" name=\"acepto\">",
+    "docUrl": "https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements/input",
+    "docLabel": "MDN — El elemento <input>",
+    "glyph": "text-cursor-input",
+    "quiz": [
+      {
+        "q": "¿Qué atributo define la clave con la que se envía el dato?",
+        "options": ["id", "name", "value"],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "html-validacion",
+    "seriesId": "html",
+    "title": "Validación de formularios",
+    "category": "Formularios",
+    "stage": 4,
+    "rarity": "epic",
+    "summary": "El navegador puede comprobar los datos antes de enviarlos con atributos como required, minlength o pattern, sin escribir JavaScript.",
+    "keyPoints": [
+      "required impide enviar el campo vacío",
+      "type=\"email\" exige un correo válido",
+      "Valida también en el servidor"
+    ],
+    "example": "<input\n  name=\"usuario\"\n  required\n  minlength=\"3\"\n>",
+    "docUrl": "https://developer.mozilla.org/es/docs/Learn_web_development/Extensions/Forms/Form_validation",
+    "docLabel": "MDN — Validación de formularios",
+    "glyph": "shield-check",
+    "quiz": [
+      {
+        "q": "¿Qué atributo hace obligatorio un campo?",
+        "options": ["required", "needed", "validate"],
+        "answer": 0
+      }
+    ]
+  },
+  {
+    "id": "html-formularios",
+    "seriesId": "html",
+    "title": "Formularios",
+    "category": "Formularios",
+    "stage": 4,
+    "rarity": "legendary",
+    "summary": "<form> agrupa campos para enviar datos. action indica a dónde se envían y method cómo (GET o POST).",
+    "keyPoints": [
+      "Un <button> dentro del form lo envía",
+      "GET pone los datos en la URL, POST no",
+      "Cada campo necesita name para enviarse"
+    ],
+    "example": "<form action=\"/buscar\" method=\"get\">\n  <label for=\"q\">Buscar</label>\n  <input id=\"q\" name=\"q\">\n  <button>Enviar</button>\n</form>",
+    "docUrl": "https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements/form",
+    "docLabel": "MDN — El elemento <form>",
+    "glyph": "clipboard-list",
+    "quiz": [
+      {
+        "q": "¿Qué método envía los datos dentro de la URL?",
+        "options": ["POST", "GET", "PUT"],
+        "answer": 1
+      },
+      {
+        "q": "¿Qué atributo indica a dónde se envía el formulario?",
+        "options": ["action", "href", "target"],
+        "answer": 0
+      }
+    ]
+  }
+]

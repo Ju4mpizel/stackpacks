@@ -1,0 +1,162 @@
+[
+  {
+    "id": "html",
+    "name": "HTML",
+    "tier": 0,
+    "requires": [],
+    "color": "#FF8C42",
+    "icon": "html5",
+    "status": "available",
+    "tagline": "La estructura de toda página web."
+  },
+  {
+    "id": "css",
+    "name": "CSS",
+    "tier": 0,
+    "requires": [],
+    "color": "#4D7CFE",
+    "icon": "css",
+    "status": "available",
+    "tagline": "Color, espacio y diseño para tus páginas."
+  },
+  {
+    "id": "javascript",
+    "name": "JavaScript",
+    "tier": 0,
+    "requires": [],
+    "color": "#FFD23F",
+    "icon": "javascript",
+    "status": "available",
+    "tagline": "El lenguaje que da vida a la web."
+  },
+  {
+    "id": "python",
+    "name": "Python",
+    "tier": 0,
+    "requires": [],
+    "color": "#3BCEAC",
+    "icon": "python",
+    "status": "available",
+    "tagline": "Un lenguaje claro para empezar a programar."
+  },
+  {
+    "id": "git",
+    "name": "Git & GitHub",
+    "tier": 0,
+    "requires": [],
+    "color": "#FF6B9E",
+    "icon": "git",
+    "status": "available",
+    "tagline": "Guarda versiones y trabaja en equipo."
+  },
+  {
+    "id": "sql",
+    "name": "SQL",
+    "tier": 0,
+    "requires": [],
+    "color": "#B28DFF",
+    "icon": "lucide:database",
+    "status": "available",
+    "tagline": "Pregúntale cosas a tus datos."
+  },
+  {
+    "id": "typescript",
+    "name": "TypeScript",
+    "tier": 1,
+    "requires": ["javascript"],
+    "color": "#4D7CFE",
+    "icon": "typescript",
+    "status": "coming-soon",
+    "tagline": "JavaScript con tipos."
+  },
+  {
+    "id": "tailwind",
+    "name": "Tailwind CSS",
+    "tier": 1,
+    "requires": ["css"],
+    "color": "#3BCEAC",
+    "icon": "tailwindcss",
+    "status": "coming-soon",
+    "tagline": "Estilos con clases utilitarias."
+  },
+  {
+    "id": "nodejs",
+    "name": "Node.js",
+    "tier": 1,
+    "requires": ["javascript"],
+    "color": "#3BCEAC",
+    "icon": "nodedotjs",
+    "status": "coming-soon",
+    "tagline": "JavaScript fuera del navegador."
+  },
+  {
+    "id": "php",
+    "name": "PHP",
+    "tier": 1,
+    "requires": ["html"],
+    "color": "#B28DFF",
+    "icon": "php",
+    "status": "coming-soon",
+    "tagline": "El lenguaje clásico del servidor."
+  },
+  {
+    "id": "react",
+    "name": "React",
+    "tier": 2,
+    "requires": ["html", "css", "javascript"],
+    "color": "#3BCEAC",
+    "icon": "react",
+    "status": "coming-soon",
+    "tagline": "Interfaces hechas de componentes."
+  },
+  {
+    "id": "laravel",
+    "name": "Laravel",
+    "tier": 2,
+    "requires": ["php", "sql", "html"],
+    "color": "#FF5A5F",
+    "icon": "laravel",
+    "status": "coming-soon",
+    "tagline": "El framework PHP más usado."
+  },
+  {
+    "id": "supabase",
+    "name": "Supabase",
+    "tier": 2,
+    "requires": ["sql", "javascript"],
+    "color": "#3BCEAC",
+    "icon": "supabase",
+    "status": "coming-soon",
+    "tagline": "Base de datos y backend listos para usar."
+  },
+  {
+    "id": "angular",
+    "name": "Angular",
+    "tier": 2,
+    "requires": ["typescript", "html", "css"],
+    "color": "#FF6B9E",
+    "icon": "angular",
+    "status": "coming-soon",
+    "tagline": "Framework completo para apps grandes."
+  },
+  {
+    "id": "django",
+    "name": "Django",
+    "tier": 2,
+    "requires": ["python", "sql"],
+    "color": "#3BCEAC",
+    "icon": "django",
+    "status": "coming-soon",
+    "tagline": "Webs rápidas con Python."
+  },
+  {
+    "id": "nextjs",
+    "name": "Next.js",
+    "tier": 3,
+    "requires": ["react", "nodejs"],
+    "color": "#FFD23F",
+    "icon": "nextdotjs",
+    "status": "coming-soon",
+    "tagline": "React con servidor, rutas y rendimiento."
+  }
+]
