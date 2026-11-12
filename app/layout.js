@@ -1,5 +1,6 @@
 import { Archivo_Black, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import { ProgressRuntime } from "@/components/ProgressRuntime";
+import { SiteHeader } from "@/components/SiteHeader";
 import "./globals.css";
 
 const archivoBlack = Archivo_Black({
@@ -42,6 +43,7 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-dvh">
         <ProgressRuntime />
+        <SiteHeader />
         {children}
       </body>
     </html>
