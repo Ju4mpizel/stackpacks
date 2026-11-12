@@ -15,7 +15,10 @@ import "./card.css";
  * @param {object}  props.series   { name, color, icon }
  * @param {number}  props.number   posición en la serie (1..total)
  * @param {number}  props.total    cartas de la serie
- * @param {"silhouette"|"obtained"|"evolved"} [props.state]
+ * @param {"silhouette"|"obtained"|"revealed"|"evolved"|"dynamic"} [props.state]
+ *   "revealed": a todo color sin holo (al abrir el sobre).
+ *   "dynamic": incluye las capas de apagada y evolucionada; el aspecto lo decide un ancestro con
+ *   data-card-state="obtained|evolved" (así el servidor renderiza la carta una sola vez).
  * @param {boolean} [props.tilt]   inclinación 3D + brillo que sigue al puntero (solo evolucionadas)
  * @param {boolean} [props.gyro]   el brillo también sigue al giroscopio
  * @param {boolean} [props.link]   añade la interacción "presionar" (cuando va dentro de un enlace)
@@ -58,7 +61,9 @@ export function Card({
     );
   }
 
-  const evolved = state === "evolved";
+  const dynamic = state === "dynamic";
+  const evolved = state === "evolved" || dynamic; // capas holográficas
+  const locked = state === "obtained" || dynamic; // candado
   const frame = (
     <div className="sp-frame" style={style}>
       <div className="sp-inner">
@@ -88,7 +93,7 @@ export function Card({
       </div>
 
       {evolved && <div className="sp-glare" aria-hidden="true" />}
-      {state === "obtained" && (
+      {locked && (
         <span className="sp-lock" aria-hidden="true">
           <Lock className="h-[55%] w-[55%]" strokeWidth={2.75} />
         </span>
@@ -101,8 +106,10 @@ export function Card({
     series.name,
     rarity.label,
     `carta ${num}`,
-    evolved ? "evolucionada" : "sin evolucionar",
-  ].join(" · ");
+    dynamic ? null : evolved ? "evolucionada" : "sin evolucionar",
+  ]
+    .filter(Boolean)
+    .join(" · ");
 
   return (
     <Tag

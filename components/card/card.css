@@ -277,7 +277,47 @@
   box-shadow: 0 0 0 var(--color-ink);
 }
 
+/* ── Estado dinámico: un ancestro decide cómo se ve ──
+   <div data-card-state="obtained|evolved"> <Card state="dynamic" /> </div> */
+.sp-card[data-state="dynamic"] .sp-holo,
+.sp-card[data-state="dynamic"] .sp-glare,
+.sp-card[data-state="dynamic"] .sp-lock {
+  display: none;
+}
+[data-card-state="evolved"] .sp-card[data-state="dynamic"] .sp-holo,
+[data-card-state="evolved"] .sp-card[data-state="dynamic"] .sp-glare {
+  display: block;
+}
+[data-card-state="obtained"] .sp-card[data-state="dynamic"] .sp-lock {
+  display: grid;
+}
+[data-card-state="obtained"] .sp-card[data-state="dynamic"] .sp-frame {
+  filter: grayscale(1) contrast(0.9);
+  opacity: 0.72;
+}
+[data-card-state="evolved"] .sp-card[data-state="dynamic"] .sp-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 6px;
+  background: conic-gradient(
+    from calc(var(--ry) * 8 + 120deg) at var(--mx) var(--my),
+    #ff6b9e,
+    #ffd23f,
+    #3bceac,
+    #4d7cfe,
+    #b28dff,
+    #ff6b9e
+  );
+  mix-blend-mode: color-dodge;
+  opacity: calc(0.18 + var(--holo) * 0.32);
+}
+
 @media (prefers-reduced-motion: reduce) {
+  [data-card-state="evolved"] .sp-card[data-state="dynamic"] .sp-frame::before {
+    opacity: 0.3;
+  }
   .sp-tilt {
     transform: none !important;
     transition: none;
